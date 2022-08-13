@@ -1,0 +1,3429 @@
+@charset "utf-8";
+
+/* layout */
+#body{
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: #000;
+}
+#header {
+    transform: translateY(-100px);
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+    font-family: Abel, sans-serif;
+    width: 100%;
+}
+#header.active{
+    animation: header 1s forwards;
+}
+#main {
+    margin-top: -70px;
+    margin-bottom: -50px;
+    transform: scale(0.7);
+}
+#main.active{
+    animation: scale 1s ease-in-out forwards;
+}
+#strap {
+    position: relative;
+    z-index: 2;
+    margin-top: 30px;
+    background-color: #004D43;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 30px 30px 0px 0px;
+    padding: 60px 0px;
+}
+#aboutMe {
+    position: relative;
+    z-index: 3;
+    margin-top: -30px;
+    background-color: #CDEA68;
+    font-family: GmarketSansLight;
+    border-radius: 30px 30px 0px 0px;
+}
+#contents1{
+    position: relative;
+    z-index: 4;
+    margin-top: -30px;
+    background-color: #F1F1F1;
+    border-radius: 30px 30px 0px 0px;
+    font-family: Abel, sans-serif;
+}
+#contents1 #project{
+    padding: 8.5vw 0px 13vw;
+}
+#contents1 #script{
+    padding-bottom:5vw;
+}
+#contents2{
+    position: relative;
+    z-index: 5;
+    margin-top: -30px;
+    background-color: #F5FF7D;
+    border-radius: 30px 30px 0px 0px;
+}
+#contents2 #program_info{
+    padding: 13vw 0 15vw;
+}
+#contents2 #program{
+    padding:0 70px 25vw;
+}
+#eye_effect{
+    position: relative;
+    z-index: 5;
+    margin-top: -30px;
+    padding: 12vw 0px 14vw 0px;
+    background-color: #CDEA68;
+    border-radius: 30px 30px 0px 0px;
+}
+#contact{
+    position: relative;
+    z-index: 6;
+    margin-top: -30px;
+    padding: 7vw 70px 7vw 70px;
+    background-color: #004D43;
+    border-radius: 30px 30px 0px 0px;
+}
+/* header */
+.header {
+    display: flex;
+    left: 0px;
+    top: 0px;
+    justify-content: space-between;
+    padding: 30px 40px;
+    backdrop-filter: blur(10px);
+    z-index: 100px;
+}
+.header h1 {
+    font-family: GmarketSansBold;
+    font-size: 20px;
+}
+.header .nav li {
+    display: inline-block;
+    font-size: 20px;
+    padding-right: 20px;
+}
+.header .nav li:last-child {
+    padding-right: 0px;
+}
+.header h2 {
+    font-size: 20px;
+}
+@keyframes header{
+    100%{
+        transform: translateY(0px);
+    }
+}
+/* ham_btn(햄버거버튼) */
+.header .ham_btn {
+    position: absolute;
+    right: 40px;
+    top: 35px;
+    display: none;
+    width: 32px;
+    height: 16px;
+    /* background-color: #999; */
+}
+.header .ham_btn span {
+    position: relative;
+    display: block;
+    float: right;
+    width: 32px;
+    height: 2px;
+    background-color: #000;
+}
+.header .ham_btn span::after {
+    content: '';
+    position: absolute;
+    right: 0px;
+    top: 8px;
+    width: 32px;
+    height: 2px;
+    background-color: #000;
+}
+.header .ham_btn span::before {
+    content: '';
+    position: absolute;
+    right: 0px;
+    top: 16px;
+    width: 32px;
+    height: 2px;
+    background-color: #000;
+}
+
+/*main*/
+.main {
+    position: relative;
+    z-index: 1;
+    border-radius: 2vw;
+    overflow: hidden;
+    font-family: Abel, sans-serif;
+    background-color: #F1F1F1;
+}
+.main .title {
+    padding: 200px 70px 160px 70px;
+    font-size: 8vw;
+    line-height: 8vw;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: -5px;
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+.main .title .m2{
+    display: flex;
+    align-items: center;
+}
+.main .title .eye {
+    position: relative;
+    display: inline-block;
+    width: 0vw; 
+    /* width: 23vw; */
+    height: 6vw;
+    background-color: rgb(183, 212, 84);
+    border-radius: 66px;
+}
+.main .title .eye.active{
+    animation: eye 1s ease-in-out forwards;
+}
+.main .title .eye .eye_effect{
+    /* display: none; */
+    display: flex;
+    height: 6vw;
+    opacity: 0;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-right: 20px;
+}
+.main .title .eye .eye_effect.active{
+    animation:eyeOpacity 1.5s forwards ;
+}
+.main .title .eye_effect .eyes{
+    position: relative;
+    width: 4.5vw;
+    height: 4.5vw;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.main .title .eye_effect .eyes:nth-child(2){
+    margin-right: -15px;
+}
+.main .title .eye_effect .eyes .black{
+    position: absolute;
+    right: 7%;
+    top: 23%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: block;
+    width: 2.5vw;
+    height: 2.5vw;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #000;
+}
+.main .title .eye_effect .eyes .black .white{
+    margin-top: 25%;
+    display: block;
+    width: 0.8vw;
+    height: 0.8vw;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.main .under {
+    opacity: 0;
+    border-top: 1px solid #b3b3b3;
+    position: relative;
+    text-transform: uppercase;
+}
+.main .under.active{
+    animation: under 2s forwards ;
+}
+.main .under_btn { 
+    padding: 15px 70px 240px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.main .under_btn li a {
+    font-size: 18px;
+    color: #777;
+}
+.main .under_btn li a:hover {
+    color: #390;
+}
+.main .under_btn li:nth-child(2) {
+    padding-left: 5vw;
+}
+.main .under_btn .btn a{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 7px 15px 7px 15px;
+    border-radius: 22px;
+    border: 1px solid#888;
+    background: none;
+    transition: 0.5s;
+}
+.main .under_btn .btn a:hover{
+    color: #fff;
+}
+.main .under_btn .btn a::before{
+    content: '';
+    position: absolute;
+    background: #000;
+    left: 0px;
+    bottom: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 0%;
+    border-radius: 50% 50% 0 0;
+    transition: 0.5s;
+}
+.main .under_btn .btn a:hover::before{
+    height: 180%;
+}
+.main .under_btn li a .arrow {
+    margin-left: 10px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #888;
+    border-radius: 13px;
+    position: relative;
+    overflow: hidden;
+    background: none;
+    transition: 0.5s;
+}
+.main .under_btn li a .arrow::after{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: scale(0);
+    z-index: -1;
+    background: #F1F1F1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.main .under_btn li a:hover .arrow::after{
+    transform: scale(1);
+}
+.main .under_btn li a .arrow svg {
+    transform: rotate(-135deg);
+    margin-top: 3px;
+    margin-left: 3px;
+}
+.main .down {
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.main .down .arrow {
+    border: 1px solid#888;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    position: relative;
+    overflow: hidden;
+    background: none;
+    transition: 0.5s;
+}
+.main .down .arrow::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: scale(0);
+    z-index: -1;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.main .down:hover .arrow::before{
+    transform: scale(1);
+}
+.main .down:hover .arrow path{
+    fill:#fff;
+}
+.main .down .arrow svg {
+    padding-top: 7px;
+}
+.main .loadgin_text .t1{
+    position: absolute;
+    left: 70px;
+    bottom: 50px;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.main .loadgin_text .t2{
+    position: absolute;
+    right: 70px;
+    bottom: 20px;
+    font-size: 12vw;
+    font-family: 'Staatliches', cursive;
+}
+.main .loadgin_text .t2.text-blink{
+    animation: blink 0.7s ease-in-out 0.1s;
+}
+@keyframes scale{
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes blink { /*.main .loadgin_text .t2.text-blink*/
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes eye{ /*.main .title .eye*/
+    100%{
+        margin-right: 10px;
+        width: 25%;
+    }
+}
+@keyframes eyeOpacity{ /*.main .title .eye .eye_effect*/
+    70%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes under{ /*.main .under */
+    30%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* strap */
+
+.strap {
+    font-size: 23vw;
+    font-family: 'Staatliches', cursive;
+    color: rgb(255, 255, 255);
+}
+.strap span {
+    display: inline-block;
+    margin: 30px;
+}
+
+/* introduction */
+
+.aboutMe .title {
+    padding: 85px 70px;
+    border-bottom: 0.5px solid #000;
+}
+.aboutMe .title p {
+    font-size: 40px;
+    line-height: 70px;
+}
+.aboutMe .title p span {
+    border-bottom: 1px solid #000;
+}
+.aboutMe .title p span em {
+    color: rgb(0, 116, 189);
+}
+.aboutMe .info {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 70px 130px 70px;
+}
+.aboutMe .info .introduce {
+    width: 43vw;
+    /* background-color: #999; */
+}
+.aboutMe .info .introduce h2 {
+    font-size: 90px;
+    line-height: 95px;
+}
+.aboutMe .info .introduce .i1 {
+    text-transform: uppercase;
+    font-size: 50px;
+}
+.aboutMe .info .introduce .i2 {
+    padding-top: 62px;
+    font-size: 22px;
+}
+.aboutMe .info .introduce .slef_info {
+    display: flex;
+    padding-top: 110px;
+}
+.aboutMe .info .introduce .slef_info h3 {
+    padding-bottom: 10px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.aboutMe .info .introduce .slef_info li {
+    font-size: 20px;
+    line-height: 34px;
+}
+.aboutMe .info .introduce .slef_info .skill {
+    padding-right: 6vw;
+}
+.aboutMe .info .phto {
+    text-align: right;
+}
+.aboutMe .info .phto img {
+    width: 44vw;
+}
+.aboutMe .info .phto .eye {
+    position: relative;
+    left: -9vw;
+    top: -60px;
+    display: block;
+    width: 29vw;
+    height: 7vw;
+    background-color: #004D43;
+    border-radius: 66px;
+}
+.aboutMe .info .phto .eye .eye_effect{
+    display: flex;
+    height: 7vw;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+}
+.aboutMe .info .phto .eye_effect .eyes{
+    position: relative;
+    width: 4.5vw;
+    height: 4.5vw;
+    /* width: 3.6vw;
+    height: 4.8vw; */
+    border-radius: 50%;
+    background-color: #fff;
+}
+.aboutMe .info .phto .eye_effect .eyes:nth-child(2){
+    margin-left: -15px;
+}
+.aboutMe .info .phto .eye_effect .eyes .black{
+    position: absolute;
+    left: 8%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: block;
+    width: 2.5vw;
+    height: 2.5vw;
+    /* width: 2vw;
+    height: 2.8vw; */
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #000;
+}
+.aboutMe .info .phto .eye_effect .eyes .black .white{
+    margin-top: 25%;
+    display: block;
+    width: 0.8vw;
+    height: 0.8vw;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.aboutMe .phto .btn {
+    padding-top: 100px;
+    /* background-color: #999; */
+}
+.aboutMe .phto .btn a {
+    position: relative;
+    text-align: left;
+    margin-left: 450px;
+    margin-top: 5px;
+    display: block;
+    width: 17vw;
+    height: 4.5vw;
+    font-size: 26px;
+    line-height: 4.5vw;
+    border-radius: 19.5vw;
+    padding-left: 30px;
+    background-color: #000;
+    color: #fff;
+}
+.aboutMe .phto .btn a span {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 0.4vw;
+    background-color: #fff;
+}
+
+/*project*/
+.project .title{
+    font-size: 9vw;
+    text-transform: uppercase;
+    padding: 0px 70px 20px;
+   
+}
+.project .container{
+    font-weight: 900;
+    font-size: 3.3em;
+    padding: 0px 70px;
+}
+.project .cont_01{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.project .site_title{
+    position: absolute;
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    padding-top: 0.2em;
+    padding-right: 0.17em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+    display: none;
+    text-transform: uppercase;
+    text-shadow:1px 10px 8px rgba(0, 0, 0, 0.3);
+    color: #E0FE78;
+    font-size: 6vw;
+    font-family: 'Permanent Marker', cursive;
+}
+.project .site_visual.on .site_title{
+    display: inline-block;
+}
+
+.project .site_title span{
+    display: inline-block;
+    animation: textEffect 0.3s cubic-bezier(.61,.13,.43,1.01);
+}
+@keyframes textEffect{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-50px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.project .site_title span:nth-child(1){
+    animation-delay: 0s;
+}
+.project .site_title span:nth-child(2){
+    animation-delay: .1s;
+}
+.project .site_title span:nth-child(3){
+    animation-delay: .2s;
+}
+.project .site_title span:nth-child(4){
+    animation-delay: .3s;
+}
+.project .site_title span:nth-child(5){
+    animation-delay: .4s;
+}
+.project .site_title span:nth-child(6){
+    animation-delay: .5s;
+}
+.project .site_title span:nth-child(7){
+    animation-delay: .6s;
+}
+.project .site_title span:nth-child(8){
+    animation-delay: .7s;
+}
+.project .site_title span:nth-child(9){
+    animation-delay: .8s;
+}
+.project .site_title span:nth-child(10){
+    animation-delay: .9s;
+}
+.project .site_title span:nth-child(11){
+    animation-delay: 1s;
+}
+.project .site_title .t{
+    padding-right: 2vw;
+}
+.project .cont_02{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 112px;
+}
+.project h3{
+    margin-bottom: 9px;
+    text-transform: uppercase;
+    font-size: 26px;
+}
+.project h3 span{
+    display: inline-block;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 0.5vw;
+    background-color: #000;
+}
+.project .img{
+    display: block;
+    width: 44vw;
+    height: 33vw;
+    border-radius: 1.5vw;
+    overflow: hidden;
+}
+.project .btn{
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 0px;
+}
+.project .btn li{
+    display: inline-block;
+}
+.project .btn li a{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    padding: 4px 20px 4px 20px;
+    background: none;
+    font-size: 17px;
+    transition: 0.5s;
+}
+.project .btn li a:hover{
+    color: #fff;
+}
+.project .btn li a::before{
+    content: '';
+    position: absolute;
+    background: #000;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 0%;
+    z-index: -1;
+    border-radius: 50% 50% 0 0;
+    transition: 0.5s;
+}
+.project .btn li a:hover::before{
+    height: 180%;
+}
+.project .loeuvre .img{
+    position: relative;
+    background-color: #EBC9B6;
+    transition: 0.5s;
+}
+.project .loeuvre .img img{
+    position: absolute;
+    bottom: 0px;
+    transition: 0.5s;
+}
+.project .laka .img{
+    position: relative;
+    background-color: #F2A5A1;
+    transition: 0.5s;
+}
+.project .laka .img img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -48%);
+    width: 28vw;
+    transition: 0.5s;
+}
+.project .nerdy .img{
+    position: relative;
+    background-color: #CBBBEA;
+    transition: 0.5s;
+}
+.project .nerdy .img img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 22vw;
+    transition: 0.5s;
+}
+.project .mlb .img{
+    position: relative;
+    background-color: #7B86D4;
+    transition: 0.5s;
+}
+.project .mlb .img img{
+    position: absolute;
+    bottom: 0px;
+    transition: 0.5s;
+}
+.project .loeuvre .img:hover,
+.project .laka .img:hover,
+.project .nerdy .img:hover,
+.project .mlb .img:hover{
+    transform: scale(0.9);
+}
+.project .loeuvre .img:hover img,
+.project .mlb .img:hover img{
+    transform: scale(1.2);
+}
+.project .laka .img:hover img{
+    transform: translate(-50%, -48%) scale(1.1);
+}
+.project .nerdy .img:hover img{
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/*script*/
+.script .title{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 70px;
+    text-transform: uppercase;
+    font-size: 9vw;
+}
+.script .script_game {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 70px 200px;
+    text-transform: uppercase;
+}
+.script .script_game .right{
+    /* width: 67.3vw; */
+    width: 74%;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+.script .script_game .game{
+    padding:2vw 2.5vw;
+    box-sizing: border-box;
+    border-radius: 1.5vw;
+    background-color: #ECE7E3;
+    border: 1px solid #000;
+}
+.script .script_game .g1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 21.15vw;
+    height: 37vw;
+}
+.script .script_game .g2{
+    width: 47.75vw;
+    height: 20.5vw;
+}
+.script .script_game .g3{
+    width: 17.1vw;
+    height: 20.5vw;
+}
+.script .script_game .g4{
+    width: 17.3vw;
+    height: 14.4vw;
+}
+.script .script_game .g5{
+    width: 17.3vw;
+    height: 14.4vw;
+}
+.script .script_game .g6{
+    width: 28.55vw;
+    height: 14.4vw;
+}
+.script .script_game .g1 .image{
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.script .script_game .g1 .img{
+    width: 100%;
+    height: 100%;
+    background: url(../img/teteris.jpg) no-repeat;
+    background-size: cover;
+}
+.script .script_game .desc{
+    font-family: GmarketSansLight;
+}
+.script .script_game .g1 .desc{
+    padding: 1.2vw;
+    border-radius: 1vw;
+    border: 1px solid #000;
+    background-color: #C8BCE6;
+    font-size: 16px;
+}
+.script .script_game .btn{
+    display: flex;
+}
+.script .script_game .btn span{
+    padding: 0.1vw 2vw;
+    font-size: 1.5vw;
+    border-radius: 1.5vw;
+    background-color: #F7FF8F;
+    border: 1px solid #000;
+}
+
+.script .script_game .btn .arrow{
+    display: inline-block;
+    margin-left: 0.5vw;
+    width: 2.5vw;
+    height: 2.5vw;
+    position: relative;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    border-radius: 50%;
+    background-color: #F7FF8F;
+    border: 1px solid #000;
+}
+.script .script_game .btn .arrow svg{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.script .script_game .g2 {
+    display: flex;
+    justify-content: space-between;
+}
+.script .script_game .g2 .image{
+    width: 16.2vw;
+    height: 16.2vw;
+    overflow: hidden;
+    border-radius: 1vw;
+    border: 1px solid #000;
+}
+.script .script_game .g2 .img{
+    width: 100%;
+    height: 100%;
+    background: url(../img/music.jpg) no-repeat;
+    background-size: cover;
+}
+.script .script_game .g2 .desc{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+.script .script_game .g2 .desc > span{
+    position: relative;
+    margin-left: 1vw;
+    display: block;
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    background-color: #C8BCE6;
+    border: 1px solid #000;
+}
+.script .script_game .g2 .desc i{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 1.3vw;
+    transform: translate(-50%, -50%);
+}
+.script .script_game .g2 .desc p{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    font-size: 18px;
+}
+
+.script .script_study .text{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px 0px;
+    border-top: 0.5px solid #000;
+    border-bottom: 0.5px solid #000;
+    margin-bottom: -0.5px;
+    font-size: 30px;
+    color: #333;
+    text-transform: uppercase;
+}
+.script .script_study .cont1 .text{
+    border-top: 1px solid #000;
+}
+.script .script_study .text h3{
+    font-size: 30px;
+    padding-left: 70px;
+}
+.script .script_study .cont2 .text h3{
+    padding-right: 40px;
+}
+.script .script_study .cont3 .text h3{
+    padding-right: 30px;
+}
+.script .script_study .cont4 .text h3{
+    padding-right: 10px;
+}
+.script .script_study .cont5 .text{
+    margin-bottom: 0px;
+}
+.script .script_study .cont5 .text h3{
+    padding-right: 22px;
+}
+.script .script_study .text .btn{
+    padding-right: 70px;
+}
+.script .script_study .text .btn p{
+    display: flex;
+    align-items: center;
+    padding: 2px 15px 2px 25px;
+    border: 1px solid #000;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    background: none;
+    transition: 0.5s;
+}
+.script .script_study .cont.active .text .btn p,
+.script .script_study .cont:hover .text .btn p
+{
+    color: #fff;
+}
+.script .script_study .text .btn p::after{
+    content: '';
+    position: absolute;
+    background: #000;
+    left: 0px;
+    bottom: 0px;
+    z-index: -2;
+    width: 100%;
+    height: 0%;
+    border-radius: 50% 50% 0 0;
+    transition: 0.5s;
+}
+.script .script_study .cont.active .text .btn p::after,
+.script .script_study .cont:hover .text .btn p::after
+{
+    height: 180%;
+}
+.script .script_study .text .btn .arrow{
+    margin-left: 10px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    position: relative;
+    overflow: hidden;
+    background: none;
+    transition: transform 1s ease-in;
+}
+.script .script_study .text .btn .arrow::after{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: scale(0);
+    z-index: -1;
+    background: #F1F1F1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.script .script_study .cont.active .text .btn .arrow::after,
+.script .script_study .cont:hover .text .btn .arrow::after
+{
+    transform: scale(1);
+}
+
+.script .script_study .text .btn .arrow svg{
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.script .script_study .cont{
+    
+    transition: fade 1s ease;
+}
+.script .script_study .cont .desc{
+    max-height: 0px;
+    overflow: hidden;
+    display: flex; 
+    justify-content: space-between;
+    transition: 0.5s ease-in;
+}
+.script .script_study .cont .desc img{
+    opacity: 0;
+    width: 50%;
+}
+.script .script_study .cont.active .desc img{
+    animation: descEffect1 1.5s ease-in forwards;
+}
+
+.script .script_study .cont .desc .desc_right{
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+}
+.script .script_study .cont.active .desc .desc_right{
+    animation: descEffect2 2.5s cubic-bezier(.58,.2,.49,1.02)forwards;
+}
+.script .script_study .cont .desc .desc_right p{
+    font-family: GmarketSansLight;
+    font-size: 21px;
+    line-height: 40px;
+}
+.script .script_study .cont .desc .desc_right .btn{
+    display: flex;
+    text-transform: uppercase;
+}
+.script .script_study .cont .desc .desc_right .btn a{
+    display: block;
+    padding: 5px 20px 5px 20px;
+    background-color: #000;
+    border-radius: 20px;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 20px;
+}
+.script .script_study .cont5 .desc{
+    border-bottom:  0.5px solid #000;
+}
+.script .script_study .cont.active .desc{
+    padding: 40px 70px;
+    animation: fade 1s cubic-bezier(.64,.12,.65,.99) forwards;
+} 
+.script .script_study .cont.active .text .btn sv{
+    transform: rotate(180deg);
+}
+.script .scritp_site{
+    display: flex;
+    justify-content: space-between;
+    padding: 15vw 70px;
+    text-transform: uppercase;
+    font-family: 'Archivo Narrow', sans-serif;
+}
+.script .scritp_site .desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.script .scritp_site .desc h3{
+    font-size: 3.5vw;
+    line-height: 4vw;
+    margin:0.5vw 0 6vw;
+} 
+.script .scritp_site .desc h3 span{
+    display: block;
+}
+.script .scritp_site .desc p{
+    padding-right: 15vw;
+    margin-bottom: 0.8vw;
+    font-size: 16px;
+    font-family: GmarketSansLight;
+}
+.script .script_btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 65%;
+}
+.script .script_btn > p{
+    line-height: 7vw;
+    font-size: 7vw;
+    padding-right: 1vw;
+}
+.script .script_btn > p span{
+    display: block;
+}
+.script .script_btn .btn{
+    position: relative;
+    padding: 1vw 3.5vw ;
+    margin-bottom: 1vw;
+    border-radius: 3vw;
+    background-color: #000;
+}
+.script .script_btn .btn .arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.script .script_btn .btn svg{
+    transform: rotate(-90deg);
+}
+.script .script_btn .btn p{
+    display: inline-block;
+    padding-left: 3vw;
+    font-size: 2vw;
+    color: #fff;
+}
+
+@keyframes fade{
+   
+    100%{
+        max-height: 100%;
+    }
+}
+@keyframes descEffect1{
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@keyframes descEffect2{
+    from{
+        transform: translateX(120%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+/* program_info */
+.program_info .title{
+    padding: 0px 70px 6vw;
+    font-size: 10vw;
+    line-height: 10vw;
+    text-transform: uppercase;
+    font-family: 'Archivo Narrow', sans-serif;
+}
+.program_info .pro_strap {
+    white-space: nowrap;
+    overflow: hidden;
+}
+.program_info .pro_strap > div{
+    position: relative;
+    display: inline-block;
+    width: 21.5vw;
+    height: 13.4vw;
+    margin-right: 2vw;
+    border: 1px solid #000;
+    border-radius: 0.8vw;
+}
+.program_info .pro_strap .pro:first-child{
+    margin-left: 2vw;
+}
+.program_info .pro_strap .pro:last-child{
+    margin-right: 0;
+}
+.program_info .pro_strap .icon{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.program_info .pro_strap .icon i{
+    font-size: 4vw;
+}
+.program_info .pro_strap .icon p{
+    padding-top: 0.5vw;
+    font-size: 1.5vw;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Abel, sans-serif;
+}
+
+/* react */
+.react{
+    font-family: Abel, sans-serif;
+    text-transform: uppercase;
+}
+.react .title{
+    font-size: 9vw;
+    padding-bottom: 1vw;
+}
+.react .container{
+    /* width: 49vw;  */
+    display: flex;
+    justify-content: space-between;
+}
+.react .container .cont{
+    padding: 2vw 2vw;
+    width: 19vw;
+    border-radius: 1.5vw;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+.react .cont:last-child{
+    margin-top: 3vw;
+}
+.react .cont3{
+    margin-top: 8vw;
+}
+.react .cont .desc{
+    width: 90%;
+}
+.react .cont .desc h4{
+    padding-bottom: 1vw;
+    font-size: 2vw;
+    font-family: Abel, sans-serif;
+}
+.react .cont .desc p{
+    padding-bottom: 1vw;
+    font-family: GmarketSansLight;
+}
+.react .cont .image{
+    position: relative;
+    height: 17.5vw;
+    border-radius: 1vw;
+    background-color: #000;
+}
+.react .left .cont1 .image{ 
+    background-color: #0D4E38;
+}
+.react .cont .image .img{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+.react .cont1 .image .img{
+    height: 36px;
+    background: url(../img/Tous-Les-Jours.png) no-repeat center;
+}
+.react .cont .image .btn{
+    position: absolute;
+    left: 1vw;
+    bottom: 1vw;
+    display: inline-block;
+    padding: 0.15vw 1.5vw;
+    border-radius: 1.1vw;
+    font-size: 1.1vw;
+    transition:  all 0.5s ease-in;
+}
+.react .cont1 .image .btn{
+    color: #F26A25;
+    border: 1px solid #F26A25;
+}
+.react .cont1 .image .btn:hover{
+    color: #0D4E38;
+    background-color: #F26A25;
+}
+.react .cont3 .image{
+    background-color: #000;
+}
+.react .cont3 .image .btn{
+    color: #fff;
+    border: 1px solid #fff;
+}
+.react .cont3 .image .btn:hover{
+    color: #000;
+    background-color: #fff;
+}
+.react .react_desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18vw 8vw;
+    width: 43%;
+    box-sizing: border-box;
+    /* background-color: #d5f6fe; */
+    font-family: 'Archivo Narrow', sans-serif;
+}
+.react .desc1{
+    font-size: 1.7vw;
+    line-height: 1.7vw;
+}
+.react .desc2{
+    font-size: 4vw;
+    line-height: 4vw;
+}
+/* vue, php */
+.vue,
+.php{
+   
+    text-transform: uppercase;
+    font-family: Abel, sans-serif;
+}
+.vue{
+    padding-top: 20vw;
+}
+.php{
+    padding-top: 15vw;
+}
+.vue .vue_cont,
+.php .php_cont{
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 30vw;
+    border-radius: 1.5vw;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+.vue .desc,
+.php .desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3.5vw 5vw;
+    width: 50%;
+}
+.vue .desc h3,
+.php .desc h3{
+    font-size: 8vw;
+    line-height: 8vw;
+}
+.vue .desc p,
+.php .desc p{
+    padding: 2vw;
+    font-size: 18px;
+    border-radius: 1.5vw;
+    font-family: GmarketSansLight;
+}
+.vue .desc p{
+    background-color: #d9e5d6;
+}
+.php .desc p{
+    background-color: #d5f6fe;
+}
+.vue .desc p i:first-child,
+.php .desc p i:first-child{
+    padding-right: 0.3vw;
+}
+.vue .desc p i:last-child,
+.php .desc p i:last-child{
+    padding-left: 0.3vw;
+}
+.vue .image,
+.php .image{
+    width: 50%;
+}
+.vue .image .img,
+.php .image .img{
+    width: 100%;
+    height: 30vw;
+    border-radius: 1.5vw;
+    background-size: cover;
+}
+.vue .image .img{
+    box-shadow: -0.8vw 0 30px rgba(0, 0, 0, 0.3);
+    background: url(../img/vue.png) no-repeat top center;
+}
+.php .image .img{
+    box-shadow: 0.8vw 0 30px rgba(0, 0, 0, 0.3);
+    background-color: #000;
+}
+
+/*eye_effect*/
+.eye_effect{
+    position: relative;
+}
+.eye_effect .title h2{
+    font-size: 12vw;
+    line-height: 12vw;
+    font-family: 'Staatliches', cursive;
+    text-transform: uppercase;
+    text-align: center;
+}
+.eye_effect .eye {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+.eye_effect .eye .eyes:nth-child(1){
+    margin-right: -20px;
+}
+.eye_effect .eye .eyes{
+    position: relative;
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.eye_effect .eye .eyes .black{
+    position: absolute;
+    left: 22%;
+    top: 22%;
+    z-index: 1;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;
+    background-color: #000;
+}
+.eye_effect .eye .eyes .white{
+    margin-top: 25%;
+    display: block;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    background-color: #fff; 
+}
+/*contact*/
+.contact {
+   display: flex;
+   justify-content: space-between;
+}
+.contact .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contact .info h2{
+    padding-top: 2.5%;
+    color: #fff;
+    line-height: 7vw;
+    font-family: 'Staatliches', cursive;
+    font-size: 7vw;
+}
+.contact .info ul{
+    font-family: GmarketSansLight;
+    text-transform: uppercase;
+    line-height: 40px;
+    font-size: 18px;
+   
+}
+.contact .info ul li a{
+    border-bottom: 0.5px solid #f0f0f0;
+    color: #f0f0f0;
+}
+.contact .info ul li a span{
+    padding-right: 15px;
+}
+.contact .info ul li:nth-child(3),
+.contact .info ul li:nth-child(4)
+{
+    text-transform: lowercase;
+}
+.contact .info ul li:nth-child(3) span,
+.contact .info ul li:nth-child(4) span{
+    text-transform: uppercase;
+}
+.contact .e_mail {
+    width:55%;
+}
+.contact .e_mail h2{
+    padding-bottom: 17px;
+    color: #fff;
+    font-family: 'Staatliches', cursive;
+    font-size: 7vw;
+}
+.contact .e_mail .send .your{
+    display: flex;
+    justify-content: space-between;
+}
+.contact .e_mail .send input:focus{
+    outline: none;
+}
+
+.contact .e_mail .send .your .name ,
+.contact .e_mail .send .your .e-mail
+{
+    padding-left: 10px;
+    width: 47%;
+    height: 3vw;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+.contact .e_mail .send .your .name #user_name,
+.contact .e_mail .send .your .e-mail #user_email{
+    border: 0px;
+    line-height: 3vw;
+    text-transform: uppercase;
+}
+.contact .e_mail .send .your .name #user_name{
+    margin-right: 10px;
+}
+.contact .e_mail .send .message{
+    display: flex;
+}
+.contact .e_mail .send .message #user_message{
+    margin-top: 1vw;
+    padding-left: 10px;
+    width: 100%;
+    height: 24vw;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #000;
+    text-transform: uppercase;
+}
+.contact .e_mail .send .btn{
+    display: block;
+    margin-top: 1vw;
+    width: 100%;
+    height: 4vw;
+    background-color: #000;
+    border-radius: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 4vw;
+    font-family: 'Staatliches', cursive;
+    color: #fff;
+}
+
+
+/* 1920px ~ 1600px */
+@media (max-width: 1600px) {
+    .aboutMe .info .introduce .i2 br {
+        display: none;
+    }
+}
+
+/* 1920px ~ 1530px */
+@media (max-width: 1530px) {
+    .aboutMe .info .introduce h2 {
+        font-size: 85px;
+        line-height: 90px;
+    }
+
+    .aboutMe .info .introduce .i1 {
+        font-size: 45px;
+    }
+    .vue .container > div > div{
+        width: 43vw;
+    }
+}
+
+/* 1920px ~ 1450px*/
+@media (max-width: 1450px) {
+    .aboutMe .phto .btn a {
+        margin-left: 393px;
+    }
+
+    .aboutMe .info .phto .eye {
+        left: -5vw;
+    }
+    .script .container .cont .desc .desc_right p {
+        font-size: 17px;
+        line-height: 33px;
+    }
+}
+
+/* 1920px ~ 1395px*/
+@media (max-width: 1395px) {
+    .main .title{
+        padding: 240px 70px 170px;
+    }
+    .aboutMe .title p {
+        font-size: 35px;
+        line-height: 65px;
+    }
+    .aboutMe .info .introduce h2 {
+        font-size: 81px;
+        line-height: 91px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 42px;
+    }
+    .aboutMe .phto .btn a {
+        margin-left: 380px;
+    }
+    .project .container .img{
+        width: 43vw;
+    }
+    .project .container h3{
+        font-size: 25px;
+    }
+    .project .container .btn li a {
+        padding: 3px 17px 3px 17px;
+        font-size: 16px;
+    }
+    
+}
+
+/* 1920px ~ 1330px*/
+@media (max-width: 1330px) {
+    /* .main .title {
+        padding: 200px 70px 180px 70px;
+    } */
+    .aboutMe .info .introduce h2 {
+        font-size: 79px;
+        line-height: 89px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 40px;
+    }
+    .aboutMe .phto .btn a {
+        margin-left: 355px;
+        font-size: 21px;
+        line-height: 4.6vw;
+    }
+    .project .container .btn li a{
+        margin-right: 7px;
+    }
+}
+/*1920px ~ 1300px*/
+@media (max-width: 1300px){
+    .main .title {
+        padding: 260px 70px 180px;
+    }
+    .contact .info ul {
+        line-height: 38px;
+        font-size: 16px;
+    }
+    .project .container .loeuvre .site_title{
+        left: 49%;
+        transform: translate(-49%, -50%);
+    }
+    .script .container .cont .desc .desc_right .btn a {
+        margin-right: 5px;
+        font-size: 18px;
+    }
+}
+
+/* 1920px ~ 1260px */
+@media (max-width: 1260px) {
+    .aboutMe .title p {
+        font-size: 32px;
+        line-height: 62px;
+    }
+    .aboutMe .title p br {
+        display: none;
+    }
+    .aboutMe .info .introduce h2 {
+        font-size: 76px;
+        line-height: 87px;
+    }
+    .aboutMe .info .introduce .i2 {
+        padding-top: 60px;
+        font-size: 19px;
+    }
+    .aboutMe .info .introduce .slef_info li {
+        font-size: 18px;
+        line-height: 31px;
+    }
+    .aboutMe .info .introduce .slef_info {
+        padding-top: 142px;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 126px;
+    }
+    .aboutMe .phto .btn a {
+        margin-left: 310px;
+    }
+}
+/* 1920px ~ 1245px */
+@media (max-width: 1245px){
+    .project .container .loeuvre .btn li:last-child{
+        margin-top: 10px;
+    }
+    .project .container .cont_01 .site_title {
+        
+        top: 45%;
+    }
+    
+}
+/* 1920px ~ 1205px */
+@media (max-width: 1205px) {
+    .aboutMe .info .introduce h2 {
+        font-size: 73px;
+        line-height: 85px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 37px;
+    }
+    .aboutMe .info .introduce .i2 {
+        padding-top: 48px;
+    }
+    .contact .info ul {
+        line-height: 36px;
+        font-size: 15px;
+    }
+    .script .container .cont .desc .desc_right p {
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .script .container .cont .desc .desc_right .btn a {
+        font-size: 16px;
+    }
+}
+
+/* 1920px ~ 1160px */
+@media (max-width: 1160px) {
+    .main .title {
+        padding: 260px 70px 210px 70px;
+    }
+    .aboutMe .title p {
+        font-size: 30px;
+        line-height: 60px;
+    }
+    .aboutMe .info .introduce h2 {
+        font-size: 70px;
+        line-height: 82px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 33px;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 141px;
+    }
+    .aboutMe .phto .btn a {
+        margin-left: 301px;
+    }
+    .project .container h3 {
+        font-size: 24px;
+    }
+    .project .container h3 span{
+        width: 16px;
+        height: 16px;
+    }
+    .project .container .img{
+        width: 42vw;
+        height: 32vw;
+    }
+    .project .container .btn li a {
+        font-size: 15px;
+    }
+    .project .container .loeuvre .site_title{
+        left: 48%;
+        transform: translate(-48%, -50%);
+    }
+   
+    .script .container .cont .desc .desc_right {
+        width: 42%;
+    }
+}
+
+/* 1920px ~ 1087px */
+@media (max-width: 1087px) {
+    #strap {
+        padding: 60px 0;
+    }
+    .aboutMe .title p {
+        font-size: 29px;
+        line-height: 59px;
+    }
+    .aboutMe .info .introduce h2 {
+        font-size: 68px;
+        line-height: 80px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 31px;
+    }
+    .aboutMe .info .introduce .i2 {
+        padding-top: 46px;
+        font-size: 18px;
+    }
+    .aboutMe .info .introduce .slef_info {
+        padding-top: 129px;
+    }
+    .aboutMe .phto .btn a {
+        font-size: 18px;
+        line-height: 4.7vw;
+        margin-left: 276px;
+    }
+    .project .container .loeuvre .site_title{
+        left: 47%;
+        transform: translate(-47%, -50%);
+    }
+    .script .container .cont .desc .desc_right p {
+        font-size: 15px;
+        line-height: 28px;
+    }
+    .script .container .cont .desc .desc_right .btn a {
+        font-size: 14px;
+    }
+   
+    .contact .e_mail .send .btn{
+        font-size: 30px;
+    }
+    .contact .info ul {
+        line-height: 34px;
+        font-size: 14px;
+    }
+}
+
+/* 1920px ~ 1026px */
+@media (max-width: 1026px) {
+    .aboutMe .info .introduce h2 {
+        font-size: 66px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 28px;
+
+    }
+    .aboutMe .info .introduce .i2 {
+        padding-top: 35px;
+        font-size: 17px;
+    }
+    .aboutMe .info .introduce .slef_info {
+        padding-top: 154px;
+    }
+    .aboutMe .info .introduce .slef_info li {
+        font-size: 17px;
+        line-height: 29px;
+    }
+    .aboutMe .info .phto .eye {
+        left: -3vw;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 165px;
+    }
+    .aboutMe .phto .btn a {
+        margin-left: 273px;
+        padding-left: 20px;
+    }
+    .aboutMe .phto .btn a span {
+        width: 12px;
+        height: 12px;
+        right: 15px;
+    }
+    .project .container h3 {
+        font-size: 23px;
+    }
+    .project .container .img {
+        width: 41vw;
+        height: 32vw;
+    }
+    .project .container .btn li a {
+        font-size: 14px;
+    }
+    .script .container .cont .desc .desc_right {
+        width: 45%;
+    }
+    .contact .info ul {
+        line-height: 30px;
+        font-size: 13px;
+    }
+
+}
+
+/* 1920px ~ 965px */
+@media (max-width: 965px) {
+    .main .title {
+        padding: 300px 70px 220px 70px;
+    }
+    .aboutMe .title p {
+        font-size: 27px;
+        line-height: 57px;
+    }
+    .aboutMe .info .introduce h2 {
+        font-size: 63px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 25px;
+    }
+    .aboutMe .info .introduce .i2 {
+        font-size: 16px;
+    }
+    .aboutMe .info .introduce .slef_info h3 {
+        font-size: 20px;
+    }
+    .aboutMe .info .introduce .slef_info li {
+        font-size: 16px;
+        line-height: 27px;
+    }
+    .aboutMe .info .phto .eye {
+        left: -1vw;
+        top: -50px;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 177px;
+    }
+    .aboutMe .phto .btn a {
+        font-size: 16px;
+        margin-left: 244px;
+    }
+    .project .container .loeuvre .site_title{
+        left: 46%;
+        transform: translate(-46%, -50%);
+    }
+   
+    .script .container .cont .desc .desc_right p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .script .container .cont .desc .desc_right .btn a {
+        font-size: 12px;
+    }
+    
+    .contact .e_mail .send .your .name, 
+    .contact .e_mail .send .your .e-mail {
+        width: 46%;
+        border-radius: 6px;
+    }
+    .contact .e_mail .send .message #user_message {
+        border-radius: 6px;
+    }
+    .contact .e_mail .send .btn{
+        border-radius: 6px;
+        font-size: 24px;
+    }
+    .contact .info ul {
+        line-height: 26px;
+        font-size: 12px;
+    }
+}
+/*1920px ~ 900px*/
+@media (max-width: 900px){
+    .project .container h3 {
+        font-size: 22px;
+    }
+    .project .container .img {
+        width: 40vw;
+        height: 31vw;
+    }
+}
+/*1920px ~ 885px */
+@media (max-width: 885px) {
+    .aboutMe .title p {
+        font-size: 26px;
+        line-height: 53px;
+    }
+    .aboutMe .info .introduce h2 {
+        font-size: 60px;
+        line-height: 77px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 23px;
+    }
+    .aboutMe .info .phto .eye {
+        top: -40px;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 192px;
+    }
+    .aboutMe .phto .btn a {
+        margin-left: 219px;
+        font-size: 14px;
+    }
+    .script .container .cont .desc .desc_right p {
+        font-size: 13px;
+        line-height: 21px;
+    }
+    .script .container .cont .desc .desc_right .btn a {
+        font-size: 11px;
+    }
+}
+/*1920px ~ 868px*/
+@media (max-width: 868px){
+    .project .container .loeuvre .site_title{
+        left: 45%;
+        transform: translate(-45%, -50%);
+    }
+}
+/* 1920px ~ 850px */
+@media (max-width: 850px) {
+    .aboutMe .title p {
+        font-size: 24px;
+        line-height: 49px;
+    }
+    .aboutMe .info .introduce h2 {
+        font-size: 58px;
+        line-height: 73px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 22px;
+    }
+    .aboutMe .info .introduce .i2 {
+        font-size: 15px;
+    }
+    .aboutMe .info .introduce .slef_info h3 {
+        font-size: 18px;
+        padding-bottom: 8px;
+    }
+    .aboutMe .info .introduce .slef_info li {
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 178px;
+    }
+    .script .container .cont .desc .desc_right {
+        width: 47%;
+    }
+}
+/* 1920px ~ 820px */
+@media (max-width: 820px){
+    .script .container .cont .desc .desc_right .btn a {
+        font-size: 10px;
+    }
+}
+/* 1920px ~ 806px */
+@media (max-width: 806px){
+    .project .container .loeuvre .site_title{
+        left: 44%;
+        transform: translate(-44%, -50%);
+    }
+}
+/* 1920px ~ 800px */
+@media (max-width: 800px) {
+    @keyframes eye{
+        100%{
+            width: 35%;
+        }
+    }
+    .header .nav li {
+        display: none;
+    }
+    .header h2 {
+        display: none;
+    }
+    .header .ham_btn {
+        display: block;
+    }
+    .main .title{
+        font-size: 10vw;
+        line-height: 10vw;
+        text-align: center;
+        padding: 260px 70px 190px;
+    }
+    .main .title .m2 {
+        display: block;
+    }
+    .main .title .eye{
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        height: 10vw;
+    }
+    .main .title .eye .eye_effect { 
+        height: 10vw;
+    }
+    .main .title .eye_effect .eyes {
+        width: 6.5vw;
+        height: 6.5vw;
+    }
+    .main .title .eye_effect .eyes .black {  
+        width: 3.5vw;
+        height: 3.5vw;
+    }
+    .main .title .eye_effect .eyes .black .white {
+        width: 1.2vw;
+        height: 1.2vw;
+    }
+    .main .under_btn{
+        flex-direction: column;
+        align-items: center;
+        padding-top: 25px;
+    }
+    .main .under_btn li:nth-child(2) {
+        padding-left: 0px;
+        padding-bottom: 5px;
+    }
+    .main .under_btn li:nth-child(3) a{
+        padding: 3px 10px 3px 15px;
+    }
+    .main .under_btn li:nth-child(3) span{
+        display: none;
+    }
+    .main .under_btn li a .arrow{
+        margin-left: 7px;
+    }
+    .main .down .arrow{
+        top: 100px;
+    }
+    .main .loadgin_text .t2 {
+        bottom: 30px;
+        font-size: 14vw;
+    }
+    #strap {
+        padding: 20px 0;
+    }
+    .aboutMe .title p {
+        line-height: 46px;
+        font-size: 23px;
+    }
+    .aboutMe .info {
+        display: block;
+    }
+    .aboutMe .info .introduce{
+        display: inline;
+    }
+    .aboutMe .info .introduce h2 {
+        padding-top: 474px;
+        font-size: 60px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 27px;
+    }
+    .aboutMe .info .introduce .i2 {
+        font-size: 18px;
+    }
+    .aboutMe .info .introduce .slef_info {
+        padding-top: 140px;
+    }
+    .aboutMe .info .phto img {
+        display: block;
+        width: 100%;
+        margin-top: -1050px;
+    }
+    .aboutMe .info .phto .eye {
+        left: 42vw;
+        width: 39vw;
+        height: 11vw;
+    }
+    .aboutMe .info .phto .eye .eye_effect {
+        height: 11vw;
+    }
+    .aboutMe .info .phto .eye_effect .eyes {
+        width: 6.5vw;
+        height: 6.5vw;
+    }
+    .aboutMe .info .phto .eye_effect .eyes .black {
+        width: 3.5vw;
+        height: 3.5vw;
+    }
+    .aboutMe .info .phto .eye_effect .eyes .black .white {
+        width: 1.2vw;
+        height: 1.2vw;
+    }
+    .aboutMe .phto .btn{
+        display: inline-block;
+        padding-top: 405px;
+    }
+    .aboutMe .phto .btn a {
+        margin-left: 0px;
+        width: 20vw;
+        height: 6vw;
+        font-size: 15px;
+        line-height: 6.7vw;
+    }
+    .project .title h2 {
+        padding: 0px 70px;
+    }
+    .project .container .cont_01 {
+        display: block;
+    }
+    .project .container .cont_02 {
+        display: block;
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+    .project .container h3 {
+        margin-top: 6vw;
+        font-size: 24px;
+    }
+    .project .container .site{
+        position: relative;
+    }
+    .project .container .img {
+        width: 100%;
+        height: 58vw;
+    }
+    .project .container .btn {
+        margin-top: 10px;
+    }
+    .project .container .btn li a {
+        font-size: 16px;
+    }
+    .project .container .cont_01 .site_title {
+        top: 50%;
+    }
+    .project .container .loeuvre .site_title {
+        transform: translate(-37%, -50%);
+    }
+    .project .container .laka > .img >img {
+        width: 41vw;
+    }
+
+    .project .container .nerdy > .img > img {
+        width: 31vw;
+    }
+    .script .title .btn p{
+        font-size: 19px;
+    }
+    .script .title .btn .arrow{
+        width: 37px;
+        height: 37px;
+    }
+    .script .title .btn .arrow svg{
+        margin-top: -12px;
+        width: 24px;
+        height: 24px;
+    }
+    .script .container .text{
+        font-size: 25px;
+    }
+    .script .container .text h3{
+        font-size: 25px;
+    }
+    .script .container .text  > p{
+       display: none;
+    }
+    .script .container .text .btn p{
+        padding: 2px 5px 2px 15px;
+    }
+    .script .container .text .btn .arrow{
+        right: 5px;
+        width: 28px;
+        height: 28px;
+    }
+    .script .container .text .btn .arrow svg{
+        right: 4px;
+        width:20px;
+        height: 20px;
+        margin-left: 4px;
+        margin-bottom: 3px;
+    }
+    .script .container .cont.active .desc {
+        display: block;
+    }
+    .script .container .cont .desc img {
+        width: 100%;
+    }
+    .script .container .cont .desc .desc_right {
+        width: 100%;
+    }
+    .script .container .cont .desc .desc_right p {
+        font-size: 17px;
+        line-height: 33px;
+    }
+    .script .container .cont .desc .desc_right .btn a {
+        margin-top: 80px;
+        font-size: 18px;
+    }
+   
+    .contact {
+        display: block;
+        justify-content: none;
+    }
+    .contact .info{
+        display: none;
+    }
+    .contact .e_mail {
+        width: 100%;
+    }
+    .contact input{
+        height: 4vw;
+    }
+    .contact .e_mail h2 {
+        font-size: 10vw;
+    }
+    .contact .e_mail .send .your .name,
+    .contact .e_mail .send .your .e-mail {
+        width: 47%;
+        height: 4vw;
+    }
+    .contact .e_mail .send .message #user_message {
+        height: 37vw;
+    }
+    .contact .e_mail .send .btn{
+        line-height: 6vw;
+        height: 6vw;
+    }
+}
+/* 1920px ~ 755px */
+@media (max-width: 755px){
+    .project .container .loeuvre .site_title {
+        left: 43%;
+        transform: translate(-35%, -50%);
+    }
+}
+/* 1920px ~ 740px */
+@media (max-width: 740px){
+    .aboutMe .info .introduce h2 {
+        padding-top: 430px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -1009px;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 422px;
+    }
+}
+/* 1920px ~ 709px */
+@media (max-width: 709px){
+    .project .container .loeuvre .site_title {
+        left: 42%;
+        transform: translate(-34%, -50%);
+    }
+}
+/* 1920px ~ 698px */
+@media (max-width: 698px){
+    .aboutMe .info .introduce h2 {
+        padding-top: 400px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -979px;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 433px;
+    }
+    .aboutMe .phto .btn a {
+        font-size: 14px;
+        line-height: 6.5vw;
+    }
+    .aboutMe .phto .btn a span {
+        width: 10px;
+        height: 10px;
+        right: 12px;
+    }
+    .project .container .loeuvre .site_title {
+        left: 41%;
+        transform: translate(-34%, -50%);
+    }
+}
+/*1920px ~ 668px*/
+@media (max-width: 668px){
+    .main .title {
+        padding: 260px 70px 200px 70px;
+    }
+    .aboutMe .title p {
+        line-height: 42px;
+        font-size: 21px;
+    }
+    .aboutMe .info .introduce h2 {
+        padding-top: 370px;
+        font-size: 57px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 26px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -947px;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 540px;
+        display: block;
+        float: right;
+    }
+    .project .container .loeuvre .site_title {
+        left: 40%;
+        transform: translate(-32%, -50%);
+    }
+}
+/*1920px ~ 630px*/
+@media (max-width: 630px){
+    .aboutMe .phto .btn a {
+        font-size: 13px;
+    }
+    .aboutMe .info{
+        padding: 95px 70px 125px;
+    }
+    .aboutMe .info .introduce h2 {
+        padding-top: 350px;
+        line-height: 66px;
+        font-size: 54px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 23px;
+    }
+    .aboutMe .info .introduce .i2 {
+        font-size: 17px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -912px;
+    }
+    .project .container .loeuvre .site_title {
+        left: 39%;
+        transform: translate(-30%, -50%);
+    }
+    .script .title .btn p em{
+        display: none;
+    }
+    .script .container .cont .desc .desc_right .btn a {
+        margin-top: 70px;
+        font-size: 16px;
+    }
+}
+
+/*1920px ~ 590px*/
+@media (max-width: 590px){
+   .main .title{
+        letter-spacing: -3px;
+        padding: 270px 70px 210px 70px;
+   }
+   .main .title .eye_effect .eyes .black{
+        width: 3.2vw;
+        height: 3.2vw;
+    }
+    .main .title .eye_effect .eyes .black .white {
+        width: 1vw;
+        height: 1vw;
+    }
+   .aboutMe .title p {
+        line-height: 38px;
+        font-size: 20px;
+    }
+    .aboutMe .info .introduce h2 {
+        padding-top: 320px;
+        font-size: 54px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -908px;
+    }
+    .aboutMe .info .phto .eye {
+        left: 33vw;
+    }
+    .aboutMe .info .phto .eye_effect .eyes .black {
+        width: 3.2vw;
+        height: 3.2vw;
+    }
+    .aboutMe .info .phto .eye_effect .eyes .black .white {
+        width: 1vw;
+        height: 1vw;
+    }
+    .aboutMe .phto .btn{
+        padding-top: 563px;
+    }
+    .aboutMe .phto .btn a {
+        width: 23vw;
+        height: 7.5vw;
+        line-height: 7.7vw;
+    }
+    .project .title h2 {
+        font-size: 60px;
+    }
+    .project .container h3 {
+        font-size: 23px;
+    }
+    .project .container .btn li a {
+        font-size: 15px;
+    }
+    .project .container .loeuvre .site_title {
+        left: 38%;
+        transform: translate(-28%, -65%);
+    }
+    .script .title h2 {
+        font-size: 60px;
+    }
+    .script .title .btn p {
+        font-size: 17px;
+    }
+    .script .title .btn p span{
+        display: none;
+    }
+    .script .title .btn .arrow {
+        width: 33px;
+        height: 33px;
+    }
+    .script .title .btn .arrow svg {
+        margin-top: -11px;
+        width: 21px;
+        height: 21px;
+    }
+    .script .container .text {
+        font-size: 23px;
+    }
+    .script .container .text h3 {
+        font-size: 23px;
+    }
+    .script .container .cont .desc .desc_right p {
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .script .container .cont .desc .desc_right .btn a {
+        font-size: 14px;
+    }
+  
+    .contact input{
+        height: 5vw;
+    }
+    .contact .e_mail .send .btn {
+        line-height: 7vw;
+        height: 7vw;
+    }
+    .contact .e_mail .send .your .name, 
+    .contact .e_mail .send .your .e-mail {
+        width: 46%;
+        height: 5vw;
+    }
+    
+}
+/*1920px ~ 560px*/
+@media (max-width: 560px){
+    .main .title {
+        padding: 280px 70px 220px 70px;
+    }
+    .aboutMe .title{
+        padding: 80px 70px;
+    }
+    .aboutMe .title p {
+        line-height: 36px;
+        font-size: 19px;
+    }
+    .aboutMe .info{
+        padding: 90px 70px 120px 70px;
+    }
+    .aboutMe .info .introduce h2 {
+        padding-top: 285px;
+        font-size: 50px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 23px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -890px;
+    }
+    .project .container .loeuvre .site_title {
+        left: 35%;
+        transform: translate(-24%, -65%);
+    }
+    .project .container .nerdy .site_title {
+        left: 39%;
+        transform: translate(-26%, -50%);
+    }
+}
+/*1920px ~ 530px*/
+@media (max-width: 530px){
+    .main .loadgin_text .t1 {
+        font-size: 27px;
+    }
+    .main .loadgin_text .t2 {
+        font-size: 16vw;
+    }
+    .aboutMe .title {
+        padding: 75px 70px;
+    }
+    .aboutMe .title p {
+        line-height: 33px;
+        font-size: 18px;
+    }
+    .aboutMe .info {
+        padding: 80px 70px 110px 70px;
+    }
+    .aboutMe .info .introduce h2 {
+        padding-top: 275px;
+        line-height: 54px;
+        font-size: 47px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 22px;
+    }
+    .aboutMe .info .introduce .i2 {
+        font-size: 16px;
+        padding-top: 35px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -844px;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 590px;
+    }
+    .aboutMe .phto .btn a {
+        font-size: 12px;
+        line-height: 7.8vw;
+    }    
+    .project .container .loeuvre .site_title {
+        left: 33%;
+        transform: translate(-22%, -65%);
+    }
+    .project .container .laka .site_title {
+        left: 49%;
+        transform: translate(-49%, -50%);
+    }
+    .script .title .btn p {
+        font-size: 15px;
+    }
+    .script .title .btn .arrow {
+        width: 31px;
+        height: 31px;
+    }
+    .script .title .btn .arrow svg {
+        width: 19px;
+    }
+    .script .container .text {
+        font-size: 21px;
+    }
+    .script .container .text h3 {
+        font-size: 21px;
+    }
+    .script .container .text .btn .arrow {
+        width: 26px;
+        height: 26px;
+    }
+    .script .container .text .btn .arrow svg {
+        margin-left: 3px;
+        margin-bottom: 1px;
+    }
+    .script .container .cont .desc .desc_right p {
+        font-size: 15px;
+        line-height: 27px;
+    }
+    .script .container .cont .desc .desc_right .btn a {
+        font-size: 12px;
+    }
+    .eye_effect .eye .eyes .black {
+        left: 23%;
+        top: 23%;
+        width: 6.5vw;
+        height: 6.5vw;
+    }
+    
+}
+/*1920px ~ 480px*/
+@media (max-width: 480px){
+    .main .title {
+        padding: 290px 0px 230px 0px;
+    }
+    .main .title .eye .eye_effect {
+        margin-right: 12px;
+    }
+    .main .title .eye_effect .eyes:nth-child(2) {
+        margin-right: -11px;
+    } 
+    .aboutMe .title {
+        padding: 70px 50px;
+    }
+    .aboutMe .title p {
+        line-height: 30px;
+        font-size: 17px;
+    }
+    .aboutMe .info {
+        padding: 70px 50px 100px 50px;
+    }
+    .aboutMe .info .introduce h2{
+        padding-top: 270px;
+        font-size: 44px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 21px;
+    }
+    .aboutMe .info .introduce .i2 {
+        font-size: 15px;
+        padding-top: 30px;
+    }
+    .aboutMe .info .introduce .slef_info h3 {
+        font-size: 17px;
+        padding-bottom: 6px;
+    }
+    .aboutMe .info .introduce .slef_info li {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -815px;
+    }
+    .aboutMe .info .phto .eye .eye_effect {
+        margin-left: 12px;
+    }
+    .aboutMe .info .phto .eye_effect .eyes:nth-child(2) {
+        margin-left: -11px;
+    }
+    .aboutMe .info .phto .eye {
+        left: 29vw;
+        top: -27px;
+    }
+    .aboutMe .phto .btn a {
+        font-size: 11px;
+        line-height: 8vw;
+    }
+    .project .title h2{
+        padding: 0px 50px;
+        font-size: 57px;
+    }
+    .project .container{
+        padding: 0px 50px;
+    }
+    .project .container h3 {
+        margin-top: 50px;
+        font-size: 22px;
+    }
+    .project .container .btn li a {
+        font-size: 13px;
+    }
+    .script .container .cont .desc {
+        padding: 30px 50px;
+    }
+    .script .title {
+        padding: 0px 50px;
+    }
+    .script .title h2 {
+        font-size: 57px;
+    }
+    .script .title .btn p {
+        font-size: 14px;
+    }
+    script .title .btn .arrow {
+        width: 29px;
+        height: 29px;
+    }
+    .script .title .btn .arrow svg {
+        width: 18px;
+    }
+    .script .container .text {
+        padding: 15px 0px;
+        font-size: 19px;
+    }
+    .script .container .text h3 {
+        padding-left: 50px;
+        font-size: 19px;
+    }
+    .script .container .text .btn {
+        padding-right: 50px;
+    }
+    .script .container .text .btn p > span{
+        display: none;
+    }
+    .script .container .text .btn .arrow {
+        width: 25px;
+        height: 25px;
+    }
+    .script .container .text .btn .arrow svg {
+        margin-left: 4px;
+        margin-bottom: -2px;
+        width: 17px;
+    }
+    .script .container .cont .desc .desc_right p {
+        font-size: 13px;
+        line-height: 23px;
+    }
+    .script .container .cont .desc .desc_right .btn a {
+        padding: 4px 15px 4px 15px;
+        margin-top: 50px;
+        font-size: 10px;
+    }
+   
+  
+    #contact {
+        padding: 15vw 50px 15vw 50px;
+    }
+    .contact .e_mail .send .your .name, 
+    .contact .e_mail .send .your .e-mail {
+        width: 45.5%;
+    }
+}
+
+/*1920px ~ 450px*/
+@media (max-width: 450px){
+    .header h1 {
+        font-size: 16px;
+    }
+    .header .ham_btn span {
+        width: 24px;
+        height: 1.5px;
+    }
+    .header .ham_btn span::after {
+        width: 24px;
+        height: 1.5px;
+        top: 5px;
+    }
+    .header .ham_btn span::before{
+        width: 24px;
+        height: 1.5px;
+        top: 10px;
+    } 
+    .aboutMe .title p span {
+        border-bottom: 0.5px solid #000;
+    }
+    .aboutMe .info .introduce h2 {
+        padding-top: 225px;
+        line-height: 45px;
+        font-size: 37px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 19px;
+    }
+    .aboutMe .info .introduce .i2 {
+        font-size: 14px;
+        padding-top: 25px;
+    }
+    .aboutMe .info .introduce .slef_info .skill {
+        padding-right: 4vw;
+    }
+    .aboutMe .info .introduce .slef_info h3 {
+        font-size: 16px;
+    }
+    .aboutMe .info .introduce .slef_info li {
+        font-size: 13px;
+        line-height: 22px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -732px;
+    }
+    .aboutMe .info .phto .eye {
+        left: 31vw;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 570px;
+    }
+    .aboutMe .phto .btn a {
+        width: 25vw;
+        height: 8.5vw;
+        line-height: 9vw;
+        padding-left: 15px;
+    }
+  
+    .eye_effect .eye .eyes .black {
+        left: 25%;
+        top: 25%;
+        width: 6vw;
+        height: 6vw;
+    }
+}
+/*1920px ~ 425px*/
+@media (max-width: 425px){
+    .main .loadgin_text .t1 {
+        font-size: 22px;
+    }
+    #contents1 #project {
+        padding: 80px 0px;
+    }
+    .project .title h2 {
+        font-size: 52px;
+    }
+    .project .container h3 {
+        font-size: 20px;
+    }
+    .project .container h3 span {
+        width: 13px;
+        height: 13px;
+    }
+    .project .container .img {
+        border-radius: 3vw;
+    }
+    .project .container .btn li a {
+        margin-right: 5px;
+        padding: 3px 17px 3px 17px;
+        border: 0.8px solid #000;
+        font-size: 12px;
+    }
+    .script .title h2 {
+        font-size: 52px;
+    }
+    .script .title .btn{
+        display: none;
+    }
+   
+    .contact input{
+        width: 90%;
+    }
+    .contact .e_mail .send .your {
+        display: block;
+        justify-content: none;
+    }
+    .contact .e_mail .send .your .name{
+        width: 96%;
+        margin-bottom: 3px;
+    }
+    .contact .e_mail .send .your .e-mail {
+        width: 96%;
+    }
+   
+}
+/*1920px ~ 420px*/
+@media (max-width: 420px){
+    .main .down .arrow {
+        width: 32px;
+        height: 32px;
+    }
+    .aboutMe .title {
+        padding: 65px 50px;
+    }
+    .aboutMe .title p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .aboutMe .info {
+        padding: 65px 50px 95px 50px;
+    }
+    .aboutMe .info .introduce h2 {
+        padding-top: 200px;
+        line-height: 43px;
+        font-size: 37px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 19px;
+    }
+    .aboutMe .info .introduce .i2 {
+        font-size: 14px;
+        padding-top: 25px;
+    }
+    .aboutMe .info .introduce .slef_info {
+        padding-top: 100px;
+    }
+    .aboutMe .info .introduce .slef_info h3 {
+        font-size: 16px;
+        padding-bottom: 4px;
+    }
+    .aboutMe .info .introduce .slef_info li {
+        font-size: 13px;
+        line-height: 22px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -682px;
+    }
+    .aboutMe .info .phto .eye {
+        left: 24vw;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 490px;
+    }
+    .aboutMe .phto .btn a {
+        font-size: 10px;
+    }
+    .script .container .cont .desc .desc_right p {
+        font-size: 12px;
+        line-height: 21px;
+    }
+    .script .container .cont .desc .desc_right .btn a {
+        padding: 3px 10px 3px 10px;
+    }
+}
+/*1920px ~ 403px*/
+@media (max-width: 403px){
+    .project .container .btn li:last-child {
+        margin-top: 10px;
+    }
+    .project .container .loeuvre .site_title{
+        transform: translate(-22%, -70%)
+    }
+    .project .container .laka .site_title{
+        transform: translate(-49%, -80%);
+    }
+    .project .container .nerdy .site_title {
+        transform: translate(-26%, -80%);
+    }
+    .project .container .mlb .site_title{
+        transform: translate(-50%, -70%);
+    }
+}
+/*1920px ~ 394px*/
+@media (max-width: 394px){
+    .main .title {
+        letter-spacing: -3px;
+        /* padding: 250px 0px 200px 0px; */
+    }
+    .aboutMe .title p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .aboutMe .info .introduce h2 {
+        padding-top: 202px;
+        font-size: 31px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 16px;
+    }
+    .aboutMe .info .introduce .i2 {
+        font-size: 12px;
+    }
+    .aboutMe .info .introduce .slef_info li {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -634px;
+    }
+    .aboutMe .info .phto .eye {
+        left: 22vw;
+    }
+    .aboutMe .phto .btn a span {
+        width: 8px;
+        height: 8px;
+        right: 10px;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 470px;
+    }
+    .project .container h3 {
+        margin-top: 30px;
+    }
+    .contact .e_mail .send .btn {
+        font-size: 19px;
+    }
+}
+/*1920px ~ 385px*/
+@media (max-width: 385px){
+    .main .title{
+        letter-spacing: -1px;
+    }
+    .main .loadgin_text .t1 {
+        font-size: 19px;
+    }
+    #contents1 #project {
+        padding: 70px 0px;
+    }
+    .project .title h2 {
+        font-size: 47px;
+    }
+    .project .container h3 {
+        margin-right: 5px;
+        font-size: 18px;
+    }
+    .project .container h3 span {
+        margin-right: 5px;
+        width: 11px;
+        height: 11px;
+    }
+    .project .container .btn li:last-child {
+        margin-top: 7px;
+    }
+    .project .container .btn li a {
+        font-size: 10px;
+    }
+    .script .title h2 {
+        font-size: 47px;
+    }
+    .script .container .text {
+        font-size: 18px;
+    }
+    .script .container .text h3 {
+        font-size: 18px;
+    }
+    .script .container .text .btn .arrow {
+        width: 23px;
+        height: 23px;
+    }
+    .script .container .text .btn .arrow svg {
+        margin-left: 3px;
+        right: 3px;
+    }
+    .script .container .cont .desc .desc_right .btn a {
+        margin-right: 3px;
+    }
+    
+    .contact input{
+        height: 3vw;
+    }
+    .eye_effect .eye .eyes:nth-child(1) {
+        margin-right: -15px;
+    }
+}
+/*1920px ~ 370px*/
+@media (max-width: 370px){
+    .header h1 {
+        font-size: 17px;
+    }
+    .header .ham_btn span{
+        width: 22px;
+    }
+    .header .ham_btn span::after{
+        width: 22px;
+        top: 6px;
+    }
+    .header .ham_btn span::before{
+        width: 22px;
+        top: 12px;
+    }
+    .main .title {
+        padding: 300px 0px 240px 0px;
+    }
+    .main .under_btn li a {
+        font-size: 16px;
+    }
+    .aboutMe .title {
+        padding: 60px 50px;
+    }
+    .aboutMe .title p {
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .aboutMe .info {
+        padding: 55px 50px 85px 50px;
+    }
+    .aboutMe .info .introduce h2 {
+        padding-top: 185px;
+        line-height: 36px;
+        font-size: 29px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 15px;
+    }
+    .aboutMe .info .introduce .slef_info .skill {
+        padding-right: 3vw;
+    }
+    .aboutMe .info .introduce .slef_info h3 {
+        font-size: 14px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -605px;
+    }
+    .aboutMe .phto .btn a {
+        width: 28vw;
+        height: 9.5vw;
+        line-height: 10.5vw;
+    }
+    .project .container .laka .site_title{
+        left: 47%;
+        transform: translate(-47%, -75%);
+    }
+    .contact input{
+        font-size: 10px;
+        height: 3vw;
+    }
+    .contact .e_mail .send .your .name,
+    .contact .e_mail .send .your .e-mail{
+        width: 95%;
+    }
+}
+
+/*1920px ~ 361px*/
+@media (max-width: 361px){
+    .main .title .eye_effect .eyes:nth-child(2) {
+        margin-right: -8px;
+    }
+    .aboutMe .info .introduce h2 {
+        padding-top: 180px;
+    }
+    .aboutMe .info .introduce .i2 {
+        font-size: 11px;
+    }
+    .aboutMe .info .introduce .slef_info h3 {
+        font-size: 13px;
+    }
+    .aboutMe .info .introduce .slef_info li {
+        font-size: 11px;
+        line-height: 18px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -579px;
+    }
+    .aboutMe .info .phto .eye_effect .eyes:nth-child(2) {
+        margin-left: -8px;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 415px;
+    }
+    #contents1 #project {
+        padding: 60px 0px;
+    }
+    .project .title h2 {
+        font-size: 40px;
+    }
+    .project .container h3 {
+        font-size: 16px;
+    } 
+    .project .container .btn li a{
+        margin-right: 5px;
+        padding: 2px 10px 2px 10px;
+    }
+    .project .container .btn li:last-child {
+        margin-top: 0px;
+    }
+    .project .container .loeuvre .btn li:last-child {
+        margin-top: 7px;
+    }
+    .project .container .loeuvre .site_title{
+        left:32%;
+        transform: translate(-22%, -70%)
+    }
+    .project .container .nerdy .site_title {
+        transform: translate(-26%, -60%);
+    }
+    .project .container .mlb .site_title{
+        transform: translate(-50%, -60%);
+    }
+    #contents1 #script {
+        padding-bottom: 85px;
+    }
+    .script .title h2 {
+        font-size: 40px;
+    }
+ 
+}
+/*1920px ~ 358px*/
+@media (max-width: 358px){
+    .main .loadgin_text .t1 {
+        bottom: 47px;
+        font-size: 17px;
+    }
+    .project .container .loeuvre .site_title {
+        left: 31%;
+        transform: translate(-20%, -70%);
+    }
+    .script .container .text h3 {
+        font-size: 15px;
+    }
+    .script .container .text {
+        font-size: 15px;
+    }
+    .script .container .text .btn .arrow {
+        width: 21px;
+        height: 21px;
+    }
+   
+    .contact input{
+        height: 3vw;
+    }
+    .contact .e_mail .send .your .name, 
+    .contact .e_mail .send .your .e-mail {
+        height: 6vw;
+    }
+    .contact .e_mail .send .message #user_message {
+        height: 39vw;
+    }
+    .contact .e_mail .send .btn {
+        line-height: 9vw;
+        height: 9vw;
+    }
+}
+/*1920px ~ 342px*/
+@media (max-width: 342px){
+    .main .under_btn {
+        padding: 15px 70px 250px 70px;
+    }
+    .aboutMe .title {
+        padding: 50px 50px;
+    }
+    .aboutMe .title p {
+        font-size: 12px;
+        line-height: 19px;
+    }
+    .aboutMe .info .introduce h2 {
+        padding-top: 174px;
+        line-height: 34px;
+        font-size: 27px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 14px;
+    }
+    .aboutMe .info .introduce .i2 {
+        padding-top: 19px;
+    }
+    .aboutMe .info .introduce .slef_info h3 {
+        font-size: 12px;
+    }
+    .aboutMe .info .introduce .slef_info li {
+        font-size: 10px;
+        line-height: 16px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -546px;
+    }
+    .aboutMe .info .phto .eye {
+        top: -21px;
+        left: 28vw;
+        width: 33vw;
+    }
+    .project .container .laka .site_title {
+        left: 46%;
+        transform: translate(-43%, -75%);
+    }
+    .project .container .loeuvre .site_title {
+        left: 30%;
+    }
+}
+
+
+/*1920px ~ 332px*/
+@media (max-width: 332px){
+    .header h1 {
+        padding-top: 3px;
+        font-size: 14px;
+    }
+    .header .ham_btn span::after {
+        top: 5px;
+    }
+    .header .ham_btn span::before{
+        top: 10px;
+    }
+    .main .title {
+        padding: 310px 0px 250px 0px;
+    }
+    .main .under_btn li a {
+        font-size: 14px;
+    }
+    .main .under_btn li:nth-child(3) a {
+        padding: 3px 8px 3px 13px;
+    }
+    .main .under_btn li a .arrow {
+        margin-top: -1.5px;
+        width: 20px;
+        height: 20px;
+    }
+    .main .under_btn li a .arrow svg{
+        width: 15px;
+        height: 15px;
+        margin-top: 2px;
+        margin-left: 2px;
+    }
+    .main .down .arrow {
+        width: 27px;
+        height: 27px;
+    }
+    .main .down .arrow svg{
+        padding-bottom: 3px;
+        width: 16px;
+        height: 16px;
+    }
+    .main .loadgin_text .t1 {
+        font-size: 15px;
+    }
+    .aboutMe .info .introduce h2 {
+        padding-top: 165px;
+        line-height: 25px;
+        font-size: 25px;
+    }
+    .aboutMe .info .introduce .i1 {
+        font-size: 13px;
+    }
+    .aboutMe .info .introduce .i2 {
+        font-size: 10px;
+    }.aboutMe .info .introduce .slef_info h3 {
+        font-size: 11px;
+    }
+    .aboutMe .info .phto img {
+        margin-top: -521px;
+    }
+    .aboutMe .info .phto .eye {
+        left: 32vw;
+        width: 30vw;
+        height: 10vw;
+    }
+    .aboutMe .phto .btn {
+        padding-top: 380px;
+    }
+    .aboutMe .phto .btn a{
+        width: 29vw;
+    }
+    .project .container .loeuvre .site_title {
+        left: 29%;
+    }
+    .project .container .laka .site_title {
+        left: 45%;
+        transform: translate(-40%, -75%);
+    }
+}
+/*1920px ~ 330px*/
+@media (max-width: 330px){
+    .script .container .text h3 {
+        font-size: 14px;
+    }
+    .script .container .text {
+        font-size: 14px;
+    }
+    .script .container .text .btn .arrow {
+        right: 4px;
+        width: 19px;
+        height: 19px;
+    }
+    .script .container .text .btn .arrow svg {
+        margin-left: 2px;
+    }
+    .script .container .text .btn .arrow svg {
+        width: 15px;
+    }
+    .script .container .cont .desc .desc_right .btn a {
+        padding: 3px 8px 3px 8px;
+    }
+}
+/*1920px ~ 325px*/
+@media (max-width: 325px){
+    #project {
+        padding: 55px 0px;
+    }
+    .project .title h2 {
+        font-size: 35px;
+    }
+    .project .container h3 {
+        font-size: 15px;
+    }
+    .project .container h3 span {
+        margin-right: 3px;
+        width: 9px;
+        height: 9px;
+    }
+    .project .container .btn li:last-child {
+        margin-top: 7px;
+    }
+    .script .title h2 {
+        font-size: 35px;
+    }
+ 
+}
+
+/*1920px ~ 320px*/
+@media (max-width: 320px){
+
+}

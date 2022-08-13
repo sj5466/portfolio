@@ -7,7 +7,7 @@
     left: 0px;
     top: 0px;
     bottom: 0px;
-    background-color: #000;
+    background: #000;
 }
 #header {
     transform: translateY(-100px);
@@ -34,7 +34,7 @@
     position: relative;
     z-index: 2;
     margin-top: 30px;
-    background-color: #004D43;
+    background: #004D43;
     white-space: nowrap;
     overflow: hidden;
     text-transform: uppercase;
@@ -45,7 +45,7 @@
     position: relative;
     z-index: 3;
     margin-top: -30px;
-    background-color: #CDEA68;
+    background: #CDEA68;
     font-family: GmarketSansLight;
     text-transform: uppercase;
     border-radius: 30px 30px 0px 0px;
@@ -55,7 +55,7 @@
     z-index: 4;
     padding: 8.5vw 0px 13vw;
     margin-top: -30px;
-    background-color: #F1F1F1;
+    background: #F1F1F1;
     border-radius: 30px 30px 0px 0px;
     text-transform: uppercase;
     font-family: Abel, sans-serif;
@@ -65,7 +65,7 @@
     z-index: 5;
     padding: 8.5vw 70px 12vw;
     margin-top: -30px;
-    background-color: #CDEA68;
+    background: #CDEA68;
     border-radius: 30px 30px 0px 0px;
     text-transform: uppercase;
     font-family: Abel, sans-serif;
@@ -75,25 +75,25 @@
     z-index: 6;
     padding: 9vw 70px;
     margin-top: -30px;
-    background-color: #fff;
+    background: #fff;
     border-radius: 30px 30px 0px 0px;
     text-transform: uppercase;
     font-family: Abel, sans-serif;
 }
 #eye_effect{
     position: relative;
-    z-index: 5;
+    z-index: 7;
     margin-top: -30px;
     padding: 12vw 0px 14vw 0px;
-    background-color: #CDEA68;
     border-radius: 30px 30px 0px 0px;
+    background: #CDEA68;
 }
 #contact{
     position: relative;
-    z-index: 6;
+    z-index: 8;
     margin-top: -30px;
     padding: 7vw 70px 7vw 70px;
-    background-color: #004D43;
+    background: #004D43;
     border-radius: 30px 30px 0px 0px;
 }
 /* header */
@@ -134,7 +134,7 @@
     display: none;
     width: 32px;
     height: 16px;
-    /* background-color: #999; */
+    /* background: #999; */
 }
 .header .ham_btn span {
     position: relative;
@@ -142,7 +142,7 @@
     float: right;
     width: 32px;
     height: 2px;
-    background-color: #000;
+    background: #000;
 }
 .header .ham_btn span::after {
     content: '';
@@ -151,7 +151,7 @@
     top: 8px;
     width: 32px;
     height: 2px;
-    background-color: #000;
+    background: #000;
 }
 .header .ham_btn span::before {
     content: '';
@@ -160,7 +160,7 @@
     top: 16px;
     width: 32px;
     height: 2px;
-    background-color: #000;
+    background: #000;
 }
 
 /*main*/
@@ -170,7 +170,7 @@
     border-radius: 2vw;
     overflow: hidden;
     font-family: Abel, sans-serif;
-    background-color: #F1F1F1;
+    background: #F1F1F1;
 }
 .main .title {
     padding: 200px 70px 160px 70px;
@@ -190,7 +190,7 @@
     width: 0vw; 
     /* width: 23vw; */
     height: 6vw;
-    background-color: rgb(183, 212, 84);
+    background: #CDEA68;
     border-radius: 6vw;
 }
 .main .title .eye.active{
@@ -212,7 +212,7 @@
     width: 4.5vw;
     height: 4.5vw;
     border-radius: 50%;
-    background-color: #fff;
+    background: #fff;
 }
 .main .title .eye_effect .eyes:nth-child(2){
     margin-right: -15px;
@@ -228,7 +228,7 @@
     height: 2.5vw;
     overflow: hidden;
     border-radius: 50%;
-    background-color: #000;
+    background: #000;
 }
 .main .title .eye_effect .eyes .black .white{
     margin-top: 25%;
@@ -236,7 +236,7 @@
     width: 0.8vw;
     height: 0.8vw;
     border-radius: 50%;
-    background-color: #fff;
+    background: #fff;
 }
 .main .under {
     opacity: 0;
@@ -456,7 +456,7 @@
 }
 .aboutMe .info .introduce {
     width: 43vw;
-    /* background-color: #999; */
+    /* background: #999; */
 }
 .aboutMe .info .introduce h2 {
     font-size: 90px;
@@ -498,7 +498,7 @@
     display: block;
     width: 29vw;
     height: 7vw;
-    background-color: #004D43;
+    background: #004D43;
     border-radius: 7vw;
 }
 .aboutMe .info .phto .eye .eye_effect{
@@ -515,7 +515,7 @@
     /* width: 3.6vw;
     height: 4.8vw; */
     border-radius: 50%;
-    background-color: #fff;
+    background: #fff;
 }
 .aboutMe .info .phto .eye_effect .eyes:nth-child(2){
     margin-left: -15px;
@@ -533,7 +533,7 @@
     height: 2.8vw; */
     overflow: hidden;
     border-radius: 50%;
-    background-color: #000;
+    background: #000;
 }
 .aboutMe .info .phto .eye_effect .eyes .black .white{
     margin-top: 25%;
@@ -541,11 +541,11 @@
     width: 0.8vw;
     height: 0.8vw;
     border-radius: 50%;
-    background-color: #fff;
+    background: #fff;
 }
 .aboutMe .phto .btn {
     padding-top: 100px;
-    /* background-color: #999; */
+    /* background: #999; */
 }
 .aboutMe .phto .btn a {
     position: relative;
@@ -559,7 +559,7 @@
     line-height: 4.5vw;
     border-radius: 19.5vw;
     padding-left: 30px;
-    background-color: #000;
+    background: #000;
     color: #fff;
 }
 .aboutMe .phto .btn a span {
@@ -571,7 +571,7 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: #fff;
+    background: #fff;
 }
 
 /*project*/
@@ -592,7 +592,7 @@
     display: inline-block;
     width: 23vw;
     height: 6vw;
-    background-color: rgb(183, 212, 84);
+    background: #CDEA68;
     border-radius: 6vw;
 }
 .project .title .eye_effect {
@@ -607,7 +607,7 @@
     width: 4.5vw;
     height: 4.5vw;
     border-radius: 50%;
-    background-color: #fff;
+    background: #fff;
 }
 .project .title .eye_effect .eyes:nth-child(2){
     margin-right: -15px;
@@ -615,7 +615,7 @@
 .project .title .eye_effect .eyes .black{
     position: absolute;
     right: 7%;
-    top: 23%;
+    top: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
     display: block;
@@ -623,7 +623,7 @@
     height: 2.5vw;
     overflow: hidden;
     border-radius: 50%;
-    background-color: #000;
+    background: #000;
 }
 .project .title .eye_effect .eyes .black .white{
     margin-top: 25%;
@@ -631,7 +631,7 @@
     width: 0.8vw;
     height: 0.8vw;
     border-radius: 50%;
-    background-color: #fff;
+    background: #fff;
 }
 .project .site_title{
     position: absolute;
@@ -732,7 +732,7 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background-color: #000;
+    background: #000;
 }
 .project .img{
     display: block;
@@ -740,6 +740,7 @@
     height: 33vw;
     border-radius: 1.5vw;
     overflow: hidden;
+    box-shadow:  0.5vw 0.5vw 20px rgba(0, 0, 0, 0.1);
 }
 .project .btn{
     margin-top: 20px;
@@ -780,7 +781,7 @@
 }
 .project .loeuvre .img{
     position: relative;
-    background-color: #EBC9B6;
+    background: #EBC9B6;
     transition: 0.5s;
 }
 .project .loeuvre .img img{
@@ -790,7 +791,7 @@
 }
 .project .laka .img{
     position: relative;
-    background-color: #F2A5A1;
+    background: #F2A5A1;
     transition: 0.5s;
 }
 .project .laka .img img{
@@ -803,7 +804,7 @@
 }
 .project .nerdy .img{
     position: relative;
-    background-color: #CBBBEA;
+    background: #CBBBEA;
     transition: 0.5s;
 }
 .project .nerdy .img img{
@@ -816,7 +817,7 @@
 }
 .project .mlb .img{
     position: relative;
-    background-color: #7B86D4;
+    background: #7B86D4;
     transition: 0.5s;
 }
 .project .mlb .img img{
@@ -845,7 +846,7 @@
 .script .title{
     font-size: 8.5vw;
     line-height: 7.78vw;
-    padding-bottom: 4vw;
+    margin-bottom: 4vw;
 }
 .script .title .t1{
     display: flex;
@@ -855,7 +856,7 @@
     display: inline-block;
     width: 21.8vw;
     height: 6vw;
-    background-color: #888;
+    background: #888;
     border-radius: 6vw;
 }
 .script .title .t2{
@@ -866,12 +867,12 @@
     display: inline-block;
     width: 14.2vw;
     height: 6vw;
-    background-color: #888;
+    background: #888;
     border-radius: 6vw;
 }
 .script .container{
     width: 100%;
-    height: 57vw;
+    height: 58vw;
     display: grid;
     gap: 1.5% 1%;
     grid-template-areas:
@@ -883,21 +884,148 @@
     grid-template-rows: repeat(4, 1fr);
 }
 .script .container > div{
-    background-color: white;
-    border-radius: 1vw;
+    padding: 2.5vw;
+    background: #F1F1F1;
+    border-radius: 1.5vw;
+    box-shadow:  1vw 1vw 20px rgba(0, 0, 0, 0.1);
+}
+.script .container .desc_cont p{
+    font-family: GmarketSansLight;
+}
+.script .container .desc_cont h3{
+    margin-bottom: 0;
+}
+.script .container .item_img{
+    border-radius: 1.5vw;
 }
 .script .container .item1{
     grid-area: item1;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.script .container .item1 img{
+    align-items: center;
+    width: 12.5vw;
+    border-radius: 1.2vw;
+    box-shadow:  0.5vw 0.5vw 20px rgba(0, 0, 0, 0.1);
+}
+.script .container .item1 .desc,
+.script .container .item5 .desc{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.script .container .item1 .desc_cont h3,
+.script .container .item5 .desc_cont h3{
+    padding-bottom: 0.8vw;
+    font-size: 3vw;
+    line-height: 3vw;
+}
+.script .container .item1 .desc_cont p,
+.script .container .item5 .desc_cont p{
+    padding: 1vw;
+    box-sizing: border-box;
+    background: #e8e4e4;
+    border-radius: 1.2vw;
+    font-size: 18px;
+    box-shadow:  0.5vw 0.5vw 20px rgba(0, 0, 0, 0.1);
+}
+.script .container .item1 .desc_cont p{
+    width: 25vw;
+}
+.script .container .desc_cont span{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 50%;
+    background-color: #CBBBEA;
+}
+.script .container .btn{
+    display: flex;
+    align-items: center;    
+}
+.script .container .btn p{
+    display: inline-block;
+    padding: 0.3vw 2.5vw;
+    border-radius: 2vw;
+    color: #fff;
+    box-sizing: border-box;
+    background: #000;
+    border: 1px solid #000;
+    font-size: 1.2vw;
+}
+.script .container .btn .arrow{
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5vw;
+    width: 2.4vw;
+    height: 2.4vw;
+    transform: rotate(-135deg);
+    border-radius: 50%;
+    background: #000;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+.script .container .btn svg{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: .6vw;
 }
 .script .container .item2{
     grid-area: item2;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.script .container .item2 .ani {
+    display: grid;
+    place-items: center;
+}
+  
+.script .container .item2 .ani span{
+    width: 10.5ch;
+    animation: typing 2.5s steps(22) infinite, blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-size: 3vw;
+    /* font-family: monospace; */
+}
+  
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+    
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+.script .container .item2 .desc {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.script .container .item2 .desc> p{
+    width: 15vw;
+    font-size: 18px;
+    font-family: GmarketSansLight;
 }
 .script .container .item3{
     position: relative;
     grid-area: item3;
-    background-color: #CDEA68;
+    background: #CDEA68;
 }
-.script .item3 .eye_effect {
+.script .container .item3 .eye_effect {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -908,17 +1036,17 @@
     align-items: center;
     margin-right: 20px;
 }
-.script .item3 .eye_effect .eyes{
+.script .container .item3 .eye_effect .eyes{
     position: relative;
     width: 8vw;
     height: 8vw;
     border-radius: 50%;
-    background-color: #fff;
+    background: #fff;
 }
-.script .item3 .eye_effect .eyes:nth-child(2){
+.script .container .item3 .eye_effect .eyes:nth-child(2){
     margin-right: -15px;
 }
-.script .item3 .eye_effect .eyes .black{
+.script .container .item3 .eye_effect .eyes .black{
     position: absolute;
     left: 10%;
     top: 50%;
@@ -929,24 +1057,79 @@
     height: 4vw;
     overflow: hidden;
     border-radius: 50%;
-    background-color: #000;
+    background: #000;
 }
-.script .item3 .eye_effect .eyes .black .white{
+.script .container .item3 .eye_effect .eyes .white{
     margin-top: 25%;
     display: block;
     width: 1.2vw;
     height: 1.2vw;
     border-radius: 50%;
-    background-color: #fff;
+    background: #fff;
 }
 .script .container .item4{
     grid-area: item4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.script .container .item4 .img{
+    position: relative;
+}
+.script .container .item4 .img h3{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5vw;
+}
+.script .container .item4 .img img{
+    width: 6vw;
+    opacity: 0.3;
+}
+.script .container .item4 .btn p{
+    padding: 0.2vw 2.5vw;
 }
 .script .container .item5{
     grid-area: item5;
+    display: flex;
+    justify-content: space-between;
+}
+.script .container .item5 .img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32vw;
+    height: 100%;
+    background: #000;
+    border-radius: 1.2vw;
+    overflow: hidden;
+    box-shadow:  0.5vw 0.5vw 20px rgba(0, 0, 0, 0.1);
+}
+.script .container .item5 img{
+    width: 32vw;
+}
+.script .container .item5 .desc_cont h3{
+    font-size: 3.5vw;
+    line-height: 3.5vw;
+}
+.script .container .item5 .desc_cont p{
+    width: 28vw;
 }
 .script .container .item6{
     grid-area: item6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.script .container .item6 .desc_cont img{
+    border-radius: 0.5vw;
+    box-shadow:  0.5vw 0.5vw 20px rgba(0, 0, 0, 0.1);
+}
+.script .container .item6 .title{
+    font-size: 2.5vw;
+    line-height:3.5vw;
 }
 
 /* react */
@@ -966,7 +1149,7 @@
     display: inline-block;
     width: 23vw;
     height: 6vw;
-    background-color: rgb(183, 212, 84);
+    background: #CDEA68;
     border-radius: 6vw;
 }
 .react .title .eye_effect {
@@ -981,7 +1164,7 @@
     width: 4.5vw;
     height: 4.5vw;
     border-radius: 50%;
-    background-color: #fff;
+    background: #fff;
 }
 .react .title .eye_effect .eyes:nth-child(2){
     margin-right: -15px;
@@ -989,7 +1172,7 @@
 .react .title .eye_effect .eyes .black{
     position: absolute;
     right: 7%;
-    top: 23%;
+    top: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
     display: block;
@@ -997,7 +1180,7 @@
     height: 2.5vw;
     overflow: hidden;
     border-radius: 50%;
-    background-color: #000;
+    background: #000;
 }
 .react .title .eye_effect .eyes .black .white{
     margin-top: 25%;
@@ -1005,7 +1188,7 @@
     width: 0.8vw;
     height: 0.8vw;
     border-radius: 50%;
-    background-color: #fff;
+    background: #fff;
 }
 
 /* eye_effect */
@@ -1034,7 +1217,7 @@
     width: 12vw;
     height: 12vw;
     border-radius: 50%;
-    background-color: #fff;
+    background: #fff;
 }
 .eye_effect .eye .eyes .black{
     position: absolute;
@@ -1044,7 +1227,7 @@
     width: 7vw;
     height: 7vw;
     border-radius: 50%;
-    background-color: #000;
+    background: #000;
 }
 .eye_effect .eye .eyes .white{
     margin-top: 25%;
@@ -1052,7 +1235,7 @@
     width: 2vw;
     height: 2vw;
     border-radius: 50%;
-    background-color: #fff; 
+    background: #fff; 
 }
 /*contact*/
 .contact {
@@ -1117,7 +1300,7 @@
     padding-left: 10px;
     width: 47%;
     height: 3vw;
-    background-color: #fff;
+    background: #fff;
     border-radius: 10px;
     border: 1px solid #000;
 }
@@ -1138,7 +1321,7 @@
     padding-left: 10px;
     width: 100%;
     height: 24vw;
-    background-color: #fff;
+    background: #fff;
     border-radius: 10px;
     border: 1px solid #000;
     text-transform: uppercase;
@@ -1148,7 +1331,7 @@
     margin-top: 1vw;
     width: 100%;
     height: 4vw;
-    background-color: #000;
+    background: #000;
     border-radius: 10px;
     text-align: center;
     text-transform: uppercase;

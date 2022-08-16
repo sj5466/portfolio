@@ -856,8 +856,10 @@
     display: inline-block;
     width: 21.8vw;
     height: 6vw;
+    overflow: hidden;
     background: #888;
     border-radius: 6vw;
+    background: url(../img/script1.jpg) no-repeat;
 }
 .script .title .t2{
     display: flex;
@@ -867,9 +869,12 @@
     display: inline-block;
     width: 14.2vw;
     height: 6vw;
+    overflow: hidden;
     background: #888;
     border-radius: 6vw;
+    background: url(../img/script2.jpg) no-repeat;
 }
+
 .script .container{
     width: 100%;
     height: 58vw;
@@ -1189,6 +1194,78 @@
     height: 0.8vw;
     border-radius: 50%;
     background: #fff;
+}
+.react .container div{
+    display: flex;
+    justify-content: space-between;
+}
+.react .container .desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.react .container .desc h3{
+    font-size: 6vw;
+}
+.react .container .desc span{
+    border-bottom: 1px solid #000;
+    font-size: 3.5vw;
+}
+.react .container .desc em{
+    padding-top: 2vw;
+    font-size: 20px;
+    display: block;
+    font-family: GmarketSansLight;
+}
+.react .container .image{
+    padding: 3vw;
+    box-sizing: border-box;
+    width: 52vw;
+    height: 30.5vw;
+    overflow: hidden;
+    border-radius: 1.5vw;
+    background: #F1F1F1;
+}
+.react .container .image .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.react .container .image .text h4{
+    font-size: 5vw;
+}
+.react .container .image .text div{
+    display: flex;
+    flex-direction: column;
+}
+.react .container .image .text p{
+    font-size: 1.5vw;
+}
+.react .container .image .text .btn{
+    display: flex;
+    align-items: center;    
+}
+.react .container .image .text .btn em{
+    margin-top: 1vw;
+    display: inline-block;
+    padding: 0.2vw 2.5vw;
+    border-radius: 2vw;
+    color: #fff;
+    box-sizing: border-box;
+    background: #000;
+    border: 1px solid #000;
+    font-size: 1.2vw;
+}
+.react .item1 .image{
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+.react .item1 .image img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70%;
 }
 
 /* eye_effect */

@@ -874,7 +874,6 @@
     border-radius: 6vw;
     background: url(../img/script2.jpg) no-repeat;
 }
-
 .script .container{
     width: 100%;
     height: 58vw;
@@ -902,6 +901,78 @@
 }
 .script .container .item_img{
     border-radius: 1.5vw;
+}
+.script .container .btn{
+    display: flex;
+}
+.script .container .btn p{
+    position: relative;
+    z-index: 10;
+    margin-right: 5px;
+    display: block;
+    padding: 0.2vw 1.5vw 0.2vw 1.5vw;
+    border-radius: 25px;
+    border: 1px solid #000;
+    font-size: 22px;
+    overflow: hidden;
+    background: none;
+    transition: 0.5s;
+}
+.script .container .btn:hover p{
+    color: #fff;
+}
+.script .container .btn p::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 0%;
+    background: #000;
+    border-radius: 50% 50% 0 0;
+    transition: 0.5s;
+}
+.script .container .btn:hover p::before{
+    height: 180%;
+}
+.script .container .btn .arrow{
+    position: relative;
+    z-index: 10;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    transform: rotate(-135deg);
+    overflow: hidden;
+    background: none;
+    transition: 0.5s;
+}
+.script .container .btn .arrow svg{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.script .container .btn .arrow::after{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: scale(0);
+    z-index: -1; 
+    background: #000;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.script .container .btn:hover .arrow::after{
+    transform: scale(1);
+}
+.script .container .btn:hover .arrow path{
+    fill: #fff;
 }
 .script .container .item1{
     grid-area: item1;
@@ -948,38 +1019,6 @@
     height: 1.5vw;
     border-radius: 50%;
     background-color: #CBBBEA;
-}
-.script .container .btn{
-    display: flex;
-    align-items: center;    
-}
-.script .container .btn p{
-    display: inline-block;
-    padding: 0.3vw 2.5vw;
-    border-radius: 2vw;
-    color: #fff;
-    box-sizing: border-box;
-    background: #000;
-    border: 1px solid #000;
-    font-size: 1.2vw;
-}
-.script .container .btn .arrow{
-    position: relative;
-    display: inline-block;
-    margin-left: 0.5vw;
-    width: 2.4vw;
-    height: 2.4vw;
-    transform: rotate(-135deg);
-    border-radius: 50%;
-    background: #000;
-    border: 1px solid #000;
-    box-sizing: border-box;
-}
-.script .container .btn svg{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: .6vw;
 }
 .script .container .item2{
     grid-area: item2;
@@ -1092,9 +1131,6 @@
 .script .container .item4 .img img{
     width: 6vw;
     opacity: 0.3;
-}
-.script .container .item4 .btn p{
-    padding: 0.2vw 2.5vw;
 }
 .script .container .item5{
     grid-area: item5;
@@ -1239,27 +1275,52 @@
     font-size: 4.5vw;
     line-height: 4.5vw;
 }
+.react .container .image .text h4 span{
+    display: block;
+    font-size: 18px;
+    font-family: GmarketSansLight;
+}
 .react .container .image .text div{
     display: flex;
     flex-direction: column;
 }
 .react .container .image .text p{
-    font-size: 1.5vw;
+    font-size: 25px;
 }
 .react .container .image .text .btn{
     display: flex;
     align-items: center;    
 }
 .react .container .image .text .btn em{
-    margin-top: 1vw;
-    display: inline-block;
-    padding: 0.2vw 2.5vw;
-    border-radius: 2vw;
-    color: #fff;
-    box-sizing: border-box;
-    background: #000;
+    position: relative;
+    z-index: 10;
+    margin-right: 5px;
+    display: block;
+    padding: 0.2vw 1.5vw 0.2vw 1.5vw;
+    border-radius: 25px;
     border: 1px solid #000;
-    font-size: 1.2vw;
+    font-size: 20px;
+    overflow: hidden;
+    background: none;
+    transition: 0.5s;
+}
+.react .container .image .text .btn:hover em{
+    color: #fff;
+}
+.react .container .image .text .btn em::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 0%;
+    background: #000;
+    border-radius: 50% 50% 0 0;
+    transition: 0.5s;
+}
+.react .container .image .text .btn:hover em::before{
+    height: 180%;
 }
 
 .react .item1 .image img{
@@ -1275,6 +1336,13 @@
     top: 50%;
     transform: translateY(-50%);
     width: 70%;
+}
+.react .item3 .image img{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 65%;
 }
 .react .item4 .image img{
     position: absolute;

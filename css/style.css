@@ -1186,9 +1186,6 @@
 }
 
 /* react */
-.react {
-    
-}
 .react .title{
     position: relative;
     z-index: 100;
@@ -1268,8 +1265,6 @@
     justify-content: space-between;
     width: 100%;
 }
-
-
 .react .container .desc{
     display: flex;
     flex-direction: column;
@@ -1356,7 +1351,6 @@
 .react .container .image .text .btn:hover em::before{
     height: 180%;
 }
-
 .react .item1 .image img{
     position: absolute;
     right: 2.5vw;
@@ -1397,6 +1391,11 @@
     display: flex;
     justify-content: space-between;
 }
+.study .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .study .title h2{
     color: #fff;
     font-size: 8.5vw;
@@ -1406,6 +1405,57 @@
 .study .title h2 span{
     display: block;
 }
+.study .title .btn{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 75%;
+    border-radius: 3.5vw;
+    padding: 1vw;
+    background: #CDEA68;
+}
+.study .title .btn::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 3.5vw;
+    background: #000;
+}
+.study .title .btn:hover::before{
+    animation: button 1s cubic-bezier(.25,.25,.72,.76) forwards;
+}
+.study .title .btn span{
+    color: #fff;
+    font-size: 3vw;
+    padding-right: 0.5vw;
+    transition: 1s;
+}
+.study .title .btn:hover span{
+    color: #000;
+}
+.study .title .btn .arrow{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2vw;
+    height: 3.2vw;
+    transform:rotate(-135deg);
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+.study .title .btn:hover .arrow{
+    border: none;
+}
+
 .study .container{
     width: 45%;
 }
@@ -1450,19 +1500,8 @@
 }
 .study .item .desc.active{
     max-height: 100%;
-    /* animation: fade 1s ease-in-out; */
 }
-/* @keyframes fade{
-    0%{
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0px);
-    }
-} */
-.study .item .desc .btn{
+/* .study .item .desc .btn{
     display: flex;
 }
 .study .item .desc p{
@@ -1479,12 +1518,84 @@
 .study .item .desc .btn li a{
     color: #fff;
     font-size: 1.3vw;
+} */
+.study .item .desc .btn{
+    margin-top: 20px;
+    font-size: 0px;
 }
-
+.study .item .desc p{
+    padding: 2vw 0;
+    color: #fff;
+    font-size: 1.3vw;
+}
+.study .item .desc .btn li{
+    display: inline-block;
+}
+.study .item .desc .btn li a{
+    position: relative;
+    z-index: 10;
+    display: block;
+    overflow: hidden;
+    margin-right: 10px;
+    border-radius: 1.3vw;
+    background: #000;
+    /* border: 1px solid #000; */
+    padding: 4px 20px 4px 20px;
+    font-size: 1.3vw;
+    transition: 0.5s;
+    color: #fff;
+}
+.study .item .desc .btn li a:hover{
+    color: #000;
+}
+.study .item .desc .btn li a::before{
+    content: '';
+    position: absolute;
+    background: #CDEA68;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 0%;
+    z-index: -1;
+    border-radius: 50% 50% 0 0;
+    transition: 0.5s;
+}
+.study .item .desc .btn li a:hover::before{
+    height: 180%;
+}
 @keyframes rotate{
     0%{ transform:  rotate(0deg);}
     80%{transform:  rotate(360deg);}
     100%{ transform:  scale(1.1);}
+}
+@keyframes button{
+    0%{
+        right: 0;
+        max-width: 80%;
+    }
+    30%{
+        max-width: 25%;
+        /* max-height: 50%; */
+    }
+    90%{
+        max-width: 6.5vw;
+        max-height: 6.5vw;
+        right: 3%;
+    }
+    92%{
+        max-width: 5.5vw;
+        max-height: 5.5vw;
+        right: 3%;
+    }
+    95%{
+        max-width: 4vw;
+        max-height: 4vw;
+    }
+    100%{
+        max-width: 3.5vw;
+        max-height: 3.5vw;
+        right: 7.5%;
+    }
 }
 /* thanks */
 .thanks{

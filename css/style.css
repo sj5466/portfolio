@@ -84,7 +84,7 @@
 }
 #study{
     position: relative;
-    z-index: 15000;
+    z-index: 1500;
     margin-top: -30px;
     padding: 8.5vw 70px 12vw;
     background: #004D43;
@@ -94,7 +94,7 @@
 }
 #thanks{
     position: relative;
-    z-index: 16000;
+    z-index: 1600;
     margin-top: -30px;
     padding: 12vw 0px 14vw 0px;
     border-radius: 30px 30px 0px 0px;
@@ -104,10 +104,23 @@
     position: relative;
     z-index: 1700;
     margin-top: -30px;
+    padding: 12vw 0px 1vw 0px;
+    border-radius: 30px 30px 0px 0px;
+    text-transform: uppercase;
+    background: #000;
+    font-family: Abel, sans-serif;
+}
+
+
+
+/* #contact{
+    position: relative;
+    z-index: 1700;
+    margin-top: -30px;
     padding: 7vw 70px 7vw 70px;
     background: #004D43;
     border-radius: 30px 30px 0px 0px;
-}
+} */
 /* header */
 .header {
     display: flex;
@@ -439,6 +452,8 @@
     font-size: 23vw;
     font-family: 'Staatliches', cursive;
     color: rgb(255, 255, 255);
+    /* width: 1000%;
+    animation:  textMove 70s linear infinite forwards; */
 }
 .strap span {
     display: inline-block;
@@ -524,8 +539,6 @@
     position: relative;
     width: 4.5vw;
     height: 4.5vw;
-    /* width: 3.6vw;
-    height: 4.8vw; */
     border-radius: 50%;
     background: #fff;
 }
@@ -541,8 +554,6 @@
     display: block;
     width: 2.5vw;
     height: 2.5vw;
-    /* width: 2vw;
-    height: 2.8vw; */
     overflow: hidden;
     border-radius: 50%;
     background: #000;
@@ -1431,7 +1442,7 @@
     background: #000;
 }
 .study .title .btn:hover::before{
-    animation: button 1s cubic-bezier(.25,.25,.72,.76) forwards;
+    animation: button 0.7s cubic-bezier(.25,.25,.72,.76) forwards;
 }
 .study .title .btn span{
     color: #fff;
@@ -1489,11 +1500,9 @@
 .study .item:hover .item_title .item_btn {
     animation: rotate 1s forwards;
 }
-
 .study .item .item_title .item_btn i{
     font-size: 1vw;
 }
-
 .study .item .desc{
     overflow: hidden;
     max-height: 0;   
@@ -1501,24 +1510,6 @@
 .study .item .desc.active{
     max-height: 100%;
 }
-/* .study .item .desc .btn{
-    display: flex;
-}
-.study .item .desc p{
-    padding: 2vw 0;
-    color: #fff;
-    font-size: 1.3vw;
-}
-.study .item .desc .btn li{
-    padding: 0.3vw 1.2vw;
-    margin-right: 1vw;
-    border-radius: 2vw;
-    background: #000;
-}
-.study .item .desc .btn li a{
-    color: #fff;
-    font-size: 1.3vw;
-} */
 .study .item .desc .btn{
     margin-top: 20px;
     font-size: 0px;
@@ -1539,7 +1530,6 @@
     margin-right: 10px;
     border-radius: 1.3vw;
     background: #000;
-    /* border: 1px solid #000; */
     padding: 4px 20px 4px 20px;
     font-size: 1.3vw;
     transition: 0.5s;
@@ -1573,21 +1563,28 @@
         right: 0;
         max-width: 80%;
     }
-    30%{
-        max-width: 25%;
-        /* max-height: 50%; */
+    20%{
+        max-width: 50%;
     }
-    90%{
-        max-width: 6.5vw;
-        max-height: 6.5vw;
+    40%{
+        max-width: 8vw;
+        max-height: 8vw;
         right: 3%;
     }
-    92%{
-        max-width: 5.5vw;
-        max-height: 5.5vw;
-        right: 3%;
+    50%{
+        max-width: 7vw;
+        max-height: 7vw;
     }
-    95%{
+    60%{
+        max-width: 6vw;
+        max-height: 6vw;
+        right: 5%;
+    }
+    70%{
+        max-width: 5vw;
+        max-height: 5vw;
+    }
+    80%{
         max-width: 4vw;
         max-height: 4vw;
     }
@@ -1644,108 +1641,157 @@
     background: #fff; 
 }
 /*contact*/
-.contact {
-   display: flex;
-   justify-content: space-between;
+.contact{
+    overflow: hidden;
 }
-.contact .info{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.contact .title{
+    padding: 0 70px 3vw;
 }
-.contact .info h2{
-    padding-top: 2.5%;
+.contact .title h2{
+    font-size: 8vw;
+    line-height: 8vw;
     color: #fff;
-    line-height: 7vw;
     font-family: 'Staatliches', cursive;
-    font-size: 7vw;
 }
-.contact .info ul{
-    font-family: GmarketSansLight;
-    text-transform: uppercase;
-    line-height: 40px;
-    font-size: 18px;
-   
+.contact .title h2 span{
+    display: block;
 }
-.contact .info ul li a{
-    border-bottom: 0.5px solid #f0f0f0;
-    color: #f0f0f0;
+.contact .privacy{
+    padding: 1.5vw 0;
+    border-top: 1px solid #fff ;
+    border-bottom: 1px solid #fff;
+    color: #fff;
 }
-.contact .info ul li a span{
-    padding-right: 15px;
+.contact .privacy .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 70px;
+    font-size: 2.2vw;
 }
-.contact .info ul li:nth-child(3),
-.contact .info ul li:nth-child(4)
-{
+.contact .privacy .container a{
+    color: #fff;
+    font-size: 2.2vw;
+}
+.contact .privacy .container p:hover,
+.contact .privacy .container a:hover,
+.contact .privacy .container .git:hover path{
+    color: #CDEA68;
+    fill: #CDEA68;
+}
+.contact .privacy .container a em{
     text-transform: lowercase;
 }
-.contact .info ul li:nth-child(3) span,
-.contact .info ul li:nth-child(4) span{
-    text-transform: uppercase;
+.contact .privacy .container .arrow{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2vw;
+    width: 3vw;
+    height: 3vw;
+    overflow: hidden;
+    transform: rotate(-135deg);
+    border-radius: 50%;
+    border: 1px solid #fff;
 }
-.contact .e_mail {
-    width:55%;
+.contact .privacy .container .git:hover svg{
+   animation: move 0.7s ease-out infinite;
 }
-.contact .e_mail h2{
-    padding-bottom: 17px;
+.contact .desc{
+    display: flex;
+    align-items: center;
+}
+.contact .desc{
+    padding: 70px;
+}
+.contact .desc h3{
+    font-size: 3vw;
+    line-height: 3vw;
+    margin-right: 3vw;
     color: #fff;
-    font-family: 'Staatliches', cursive;
-    font-size: 7vw;
 }
-.contact .e_mail .send .your{
+.contact .desc h3 span{
+    display: block;
+}
+.contact .desc p{
+    font-size: 1.4vw;
+    color: #fff;
+}
+.contact .desc p em{
+    color: #CDEA68;
+    text-transform: lowercase;
+}
+.contact .program {
+    padding: 70px;
+    margin-top: 12vw;
+}
+.contact .program h4{
+    color: #fff;
+    font-size: 2.5vw;
+    margin-bottom: 2vw;
+}
+.contact .program .container{
     display: flex;
     justify-content: space-between;
 }
-.contact .e_mail .send input:focus{
-    outline: none;
+.contact .program .item{
+    text-align: center;
+    color: #fff;
+    font-size: 2vw;
+}
+.contact .program .item p{
+    margin-bottom: 1vw;
+}
+.contact .program .item i{
+    font-size: 3.5vw;
+}
+.contact .text_move{
+    display: flex;
+    margin-top: 3vw;
+    /* overflow: hidden; */
+    width: 1000%;
+    animation:  textMove 70s linear infinite forwards;
+}
+.contact .effect{
+    white-space: nowrap;
+    font-size: 23vw;
+    line-height: 23vw;
+    color: #fff;
+    font-family: 'Staatliches', cursive;
+}
+.contact .effect span{
+    display: inline-block;
+    margin: 30px;
 }
 
-.contact .e_mail .send .your .name ,
-.contact .e_mail .send .your .e-mail
-{
-    padding-left: 10px;
-    width: 47%;
-    height: 3vw;
-    background: #fff;
-    border-radius: 10px;
-    border: 1px solid #000;
+
+@keyframes move{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(100px);
+    }
 }
-.contact .e_mail .send .your .name #user_name,
-.contact .e_mail .send .your .e-mail #user_email{
-    border: 0px;
-    line-height: 3vw;
-    text-transform: uppercase;
+@keyframes textMove{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-72%);
+    }
 }
-.contact .e_mail .send .your .name #user_name{
-    margin-right: 10px;
-}
-.contact .e_mail .send .message{
-    display: flex;
-}
-.contact .e_mail .send .message #user_message{
-    margin-top: 1vw;
-    padding-left: 10px;
-    width: 100%;
-    height: 24vw;
-    background: #fff;
-    border-radius: 10px;
-    border: 1px solid #000;
-    text-transform: uppercase;
-}
-.contact .e_mail .send .btn{
-    display: block;
-    margin-top: 1vw;
-    width: 100%;
-    height: 4vw;
-    background: #000;
-    border-radius: 10px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 36px;
-    line-height: 4vw;
-    font-family: 'Staatliches', cursive;
-    color: #fff;
-}
+
+
+
+
+
+
+
+
+
+
+  
 
 
 /* 1920px ~ 1600px */
@@ -1894,7 +1940,6 @@
         margin-top: 10px;
     }
     .project .container .cont_01 .site_title {
-        
         top: 45%;
     }
     
@@ -1964,7 +2009,6 @@
         left: 48%;
         transform: translate(-48%, -50%);
     }
-   
     .script .container .cont .desc .desc_right {
         width: 42%;
     }
@@ -2010,13 +2054,13 @@
         font-size: 14px;
     }
    
-    .contact .e_mail .send .btn{
+    /* .contact .e_mail .send .btn{
         font-size: 30px;
     }
     .contact .info ul {
         line-height: 34px;
         font-size: 14px;
-    }
+    } */
 }
 
 /* 1920px ~ 1026px */
@@ -2067,10 +2111,10 @@
     .script .container .cont .desc .desc_right {
         width: 45%;
     }
-    .contact .info ul {
+    /* .contact .info ul {
         line-height: 30px;
         font-size: 13px;
-    }
+    } */
 
 }
 
@@ -2120,23 +2164,6 @@
         line-height: 24px;
     }
     .script .container .cont .desc .desc_right .btn a {
-        font-size: 12px;
-    }
-    
-    .contact .e_mail .send .your .name, 
-    .contact .e_mail .send .your .e-mail {
-        width: 46%;
-        border-radius: 6px;
-    }
-    .contact .e_mail .send .message #user_message {
-        border-radius: 6px;
-    }
-    .contact .e_mail .send .btn{
-        border-radius: 6px;
-        font-size: 24px;
-    }
-    .contact .info ul {
-        line-height: 26px;
         font-size: 12px;
     }
 }
@@ -2459,35 +2486,6 @@
         margin-top: 80px;
         font-size: 18px;
     }
-   
-    .contact {
-        display: block;
-        justify-content: none;
-    }
-    .contact .info{
-        display: none;
-    }
-    .contact .e_mail {
-        width: 100%;
-    }
-    .contact input{
-        height: 4vw;
-    }
-    .contact .e_mail h2 {
-        font-size: 10vw;
-    }
-    .contact .e_mail .send .your .name,
-    .contact .e_mail .send .your .e-mail {
-        width: 47%;
-        height: 4vw;
-    }
-    .contact .e_mail .send .message #user_message {
-        height: 37vw;
-    }
-    .contact .e_mail .send .btn{
-        line-height: 6vw;
-        height: 6vw;
-    }
 }
 /* 1920px ~ 755px */
 @media (max-width: 755px){
@@ -2693,7 +2691,7 @@
         font-size: 14px;
     }
   
-    .contact input{
+    /* .contact input{
         height: 5vw;
     }
     .contact .e_mail .send .btn {
@@ -2704,7 +2702,7 @@
     .contact .e_mail .send .your .e-mail {
         width: 46%;
         height: 5vw;
-    }
+    } */
     
 }
 /*1920px ~ 560px*/
@@ -2952,13 +2950,13 @@
     }
    
   
-    #contact {
+    /* #contact {
         padding: 15vw 50px 15vw 50px;
     }
     .contact .e_mail .send .your .name, 
     .contact .e_mail .send .your .e-mail {
         width: 45.5%;
-    }
+    } */
 }
 
 /*1920px ~ 450px*/
@@ -3020,7 +3018,6 @@
         line-height: 9vw;
         padding-left: 15px;
     }
-  
     .thanks .eye .eyes .black {
         left: 25%;
         top: 25%;
@@ -3062,7 +3059,7 @@
         display: none;
     }
    
-    .contact input{
+    /* .contact input{
         width: 90%;
     }
     .contact .e_mail .send .your {
@@ -3075,7 +3072,7 @@
     }
     .contact .e_mail .send .your .e-mail {
         width: 96%;
-    }
+    } */
    
 }
 /*1920px ~ 420px*/
@@ -3196,9 +3193,9 @@
     .project .container h3 {
         margin-top: 30px;
     }
-    .contact .e_mail .send .btn {
+    /* .contact .e_mail .send .btn {
         font-size: 19px;
-    }
+    } */
 }
 /*1920px ~ 385px*/
 @media (max-width: 385px){
@@ -3249,13 +3246,13 @@
     .script .container .cont .desc .desc_right .btn a {
         margin-right: 3px;
     }
-    
-    .contact input{
-        height: 3vw;
-    }
     .thanks .eye .eyes:nth-child(1) {
         margin-right: -15px;
     }
+    
+    /* .contact input{
+        height: 3vw;
+    } */
 }
 /*1920px ~ 370px*/
 @media (max-width: 370px){
@@ -3314,14 +3311,6 @@
     .project .container .laka .site_title{
         left: 47%;
         transform: translate(-47%, -75%);
-    }
-    .contact input{
-        font-size: 10px;
-        height: 3vw;
-    }
-    .contact .e_mail .send .your .name,
-    .contact .e_mail .send .your .e-mail{
-        width: 95%;
     }
 }
 
@@ -3408,21 +3397,6 @@
     .script .container .text .btn .arrow {
         width: 21px;
         height: 21px;
-    }
-   
-    .contact input{
-        height: 3vw;
-    }
-    .contact .e_mail .send .your .name, 
-    .contact .e_mail .send .your .e-mail {
-        height: 6vw;
-    }
-    .contact .e_mail .send .message #user_message {
-        height: 39vw;
-    }
-    .contact .e_mail .send .btn {
-        line-height: 9vw;
-        height: 9vw;
     }
 }
 /*1920px ~ 342px*/

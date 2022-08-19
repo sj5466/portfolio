@@ -14,7 +14,7 @@
     position: fixed;
     left: 0px;
     top: 0px;
-    z-index: 1000;
+    z-index: 3000;
     font-family: Abel, sans-serif;
     width: 100%;
 }
@@ -22,6 +22,8 @@
     animation: header 1s forwards;
 }
 #main {
+    position: relative;
+    z-index: 1100;
     text-transform: uppercase;
     margin-top: -70px;
     margin-bottom: -50px;
@@ -32,7 +34,7 @@
 }
 #strap {
     position: relative;
-    z-index: 2;
+    z-index: 1200;
     margin-top: 30px;
     background: #004D43;
     white-space: nowrap;
@@ -43,7 +45,7 @@
 }
 #aboutMe {
     position: relative;
-    z-index: 3;
+    z-index: 1300;
     margin-top: -30px;
     background: #CDEA68;
     font-family: GmarketSansLight;
@@ -52,7 +54,7 @@
 }
 #project{
     position: relative;
-    z-index: 4;
+    z-index: 1400;
     padding: 8.5vw 0px 13vw;
     margin-top: -30px;
     background: #F1F1F1;
@@ -62,7 +64,7 @@
 }
 #script{
     position: relative;
-    z-index: 5;
+    z-index: 1500;
     padding: 8.5vw 70px 12vw;
     margin-top: -30px;
     background: #CDEA68;
@@ -71,18 +73,28 @@
     font-family: Abel, sans-serif;
 }
 #react{
-    position: relative;
-    z-index: 6;
-    padding: 9vw 70px;
+    /* position: relative; */
+    /* z-index: 1000; */
+    padding: 0 0 570vw;
     margin-top: -30px;
     background: #fff;
     border-radius: 30px 30px 0px 0px;
     text-transform: uppercase;
     font-family: Abel, sans-serif;
 }
-#eye_effect{
+#study{
     position: relative;
-    z-index: 7;
+    z-index: 15000;
+    margin-top: -30px;
+    padding: 8.5vw 70px 12vw;
+    background: #004D43;
+    border-radius: 30px 30px 0px 0px;
+    text-transform: uppercase;
+    font-family: Abel, sans-serif;
+}
+#thanks{
+    position: relative;
+    z-index: 16000;
     margin-top: -30px;
     padding: 12vw 0px 14vw 0px;
     border-radius: 30px 30px 0px 0px;
@@ -90,7 +102,7 @@
 }
 #contact{
     position: relative;
-    z-index: 8;
+    z-index: 1700;
     margin-top: -30px;
     padding: 7vw 70px 7vw 70px;
     background: #004D43;
@@ -1174,10 +1186,16 @@
 }
 
 /* react */
+.react {
+    
+}
 .react .title{
+    position: relative;
+    z-index: 100;
     font-size: 8.5vw;
     line-height: 7.78vw;
     padding-bottom: 4vw;
+    padding: 9vw 70px 10vw;background-color: #fff;
 }
 .react .title .t1 {
     display: flex;
@@ -1231,11 +1249,27 @@
     border-radius: 50%;
     background: #fff;
 }
-.react .container .item{
+/* 가로모드 */
+.react .container {
+    position: fixed;
+    left: 0; 
+    bottom: 0;
+    width: 600vw;
     display: flex;
-    justify-content: space-between;
-    padding-bottom: 7vw;
 }
+.react .container .item:nth-child(1){
+    margin-left: 110vw;
+}
+.react .container .item{
+    position: relative;
+    display: flex;
+    padding-bottom: 8vw;
+    margin-left: 15vw;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
 .react .container .desc{
     display: flex;
     flex-direction: column;
@@ -1246,11 +1280,11 @@
 }
 .react .container .desc span{
     border-bottom: 1px solid #000;
-    font-size: 3.5vw;
+    font-size: 2.7vw;
 }
 .react .container .desc em{
     padding-top: 2vw;
-    font-size: 20px;
+    font-size: 18px;
     display: block;
     font-family: GmarketSansLight;
 }
@@ -1293,7 +1327,7 @@
 }
 .react .container .image .text .btn em{
     position: relative;
-    z-index: 10;
+    z-index: 9999;
     margin-right: 5px;
     display: block;
     padding: 0.2vw 1.5vw 0.2vw 1.5vw;
@@ -1358,36 +1392,129 @@
     transform: translateY(-50%);
     width: 65%;
 }
+/* study */
+.study{
+    display: flex;
+    justify-content: space-between;
+}
+.study .title h2{
+    color: #fff;
+    font-size: 8.5vw;
+    line-height: 8.5vw;
+    font-family: 'Staatliches', cursive;
+}
+.study .title h2 span{
+    display: block;
+}
+.study .container{
+    width: 45%;
+}
+.study .item{
+    cursor: pointer;
+    padding: 1.5vw 0;
+    margin-top: -1px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+.study .item .item_title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+.study .item .item_title h3{
+    color: #fff;
+    font-size: 2.5vw;
+}
+.study .item .item_title .item_btn{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+.study .item:hover .item_title .item_btn {
+    animation: rotate 1s forwards;
+}
 
-/* eye_effect */
-.eye_effect{
+.study .item .item_title .item_btn i{
+    font-size: 1vw;
+}
+
+.study .item .desc{
+    overflow: hidden;
+    max-height: 0;   
+}
+.study .item .desc.active{
+    max-height: 100%;
+    /* animation: fade 1s ease-in-out; */
+}
+/* @keyframes fade{
+    0%{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+} */
+.study .item .desc .btn{
+    display: flex;
+}
+.study .item .desc p{
+    padding: 2vw 0;
+    color: #fff;
+    font-size: 1.3vw;
+}
+.study .item .desc .btn li{
+    padding: 0.3vw 1.2vw;
+    margin-right: 1vw;
+    border-radius: 2vw;
+    background: #000;
+}
+.study .item .desc .btn li a{
+    color: #fff;
+    font-size: 1.3vw;
+}
+
+@keyframes rotate{
+    0%{ transform:  rotate(0deg);}
+    80%{transform:  rotate(360deg);}
+    100%{ transform:  scale(1.1);}
+}
+/* thanks */
+.thanks{
     position: relative;
 }
-.eye_effect .title h2{
+.thanks .title h2{
     font-size: 12vw;
     line-height: 12vw;
     font-family: 'Staatliches', cursive;
     text-transform: uppercase;
     text-align: center;
 }
-.eye_effect .eye {
+.thanks .eye {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     display: flex;
 }
-.eye_effect .eye .eyes:nth-child(1){
+.thanks .eye .eyes:nth-child(1){
     margin-right: -20px;
 }
-.eye_effect .eye .eyes{
+.thanks .eye .eyes{
     position: relative;
     width: 12vw;
     height: 12vw;
     border-radius: 50%;
     background: #fff;
 }
-.eye_effect .eye .eyes .black{
+.thanks .eye .eyes .black{
     position: absolute;
     left: 22%;
     top: 22%;
@@ -1397,7 +1524,7 @@
     border-radius: 50%;
     background: #000;
 }
-.eye_effect .eye .eyes .white{
+.thanks .eye .eyes .white{
     margin-top: 25%;
     display: block;
     width: 2vw;
@@ -2582,7 +2709,7 @@
     .script .container .cont .desc .desc_right .btn a {
         font-size: 12px;
     }
-    .eye_effect .eye .eyes .black {
+    .thanks .eye .eyes .black {
         left: 23%;
         top: 23%;
         width: 6.5vw;
@@ -2783,7 +2910,7 @@
         padding-left: 15px;
     }
   
-    .eye_effect .eye .eyes .black {
+    .thanks .eye .eyes .black {
         left: 25%;
         top: 25%;
         width: 6vw;
@@ -3015,7 +3142,7 @@
     .contact input{
         height: 3vw;
     }
-    .eye_effect .eye .eyes:nth-child(1) {
+    .thanks .eye .eyes:nth-child(1) {
         margin-right: -15px;
     }
 }

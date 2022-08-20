@@ -899,14 +899,24 @@
             const studyPage = document.querySelector('#study');
             const thanksPage = document.querySelector('#thanks');
             const projectPage = document.querySelector('#project');
+            const scriptPage = document.querySelector('#script');
             const projectTitle =document.querySelector('.project .title');
+            const scriptTitle =document.querySelector('.script .title');
 
             studyScrollMenu();
             projectScrollText();
-            
+            scriptScrollText();
 
            
             function projectScrollText(){
+                if( scrollTop <= projectPage.offsetTop){
+                    projectTitle.classList.add('active');
+                }else{
+                    projectTitle.classList.remove('active');
+                }
+            }
+
+            function scriptScrollText(){
                 if( scrollTop <= projectPage.offsetTop){
                     projectTitle.classList.add('active');
                 }else{

@@ -890,6 +890,10 @@
 .script .title .t1{
     display: flex;
     align-items: center;
+    
+}
+.script .title.active .t1{
+    animation: scrollEffect 2s ease-in forwards;
 }
 .script .title .t1 span:nth-child(1){
     display: inline-block;
@@ -903,6 +907,9 @@
 .script .title .t2{
     display: flex;
     align-items: center;
+}
+.script .title.active .t2{
+    animation: scrollEffect 3s ease-in forwards;
 }
 .script .title .t2  span:nth-child(2){
     display: inline-block;

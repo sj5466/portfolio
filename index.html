@@ -42,7 +42,7 @@
     <!---//header--->
 
     <div id="contents">
-        <section id="main">
+        <section id="main" class="scroll">
             <div class="main">
                 <div class="title">
                     <div>song su ji</div>
@@ -87,7 +87,7 @@
             <!---//main--->
         </section>
         <!---//main--->
-        <section id="strap">
+        <section id="strap" class="scroll">
             <div data-0="transform:translateX(0px);" data-3000="transform:translateX(-4000px);"class="strap skrollable-between" style="transform: translateX(-4000px);">
                 <span>Hello, I'm Song Su-ji, a new front-end developer.</span>
                 <span>Hello, I'm Song Su-ji, a new front-end developer.</span>
@@ -166,7 +166,7 @@
         </section>
         <!---//aboutMe--->
         
-        <section id="project">
+        <section id="project" class="scroll">
             <div class="project">
                 <div class="title">
                     <div class="t1">
@@ -265,7 +265,7 @@
         </section>
         <!---//project--->
         
-        <section id="script">
+        <section id="script" class="scroll">
             <div class="script">
                 <div class="title">
                     <div class="t1">
@@ -382,7 +382,7 @@
         </section>
         <!-- script -->
 
-        <section id="react">
+        <section id="react" class="scroll">
             <div class="react">
                 <div class="title">
                     <div class="t1">
@@ -526,7 +526,7 @@
         </section>
         <!-- react -->
 
-        <section id="study">
+        <section id="study" class="scroll">
             <div class="study">
                 <div class="title">
                     <h2>study<span>javascript</span></h2>
@@ -651,7 +651,7 @@
         </section>
         <!-- study -->
 
-        <section id="thanks">
+        <section id="thanks" class="scroll">
             <div class="thanks">
                 <div class="eye">
                     <div class="eyes"><span class="black"><em class="white"></em></span></div>
@@ -670,7 +670,7 @@
         <!---//thanks--->
 
 
-        <section id="contact">
+        <section id="contact" class="scroll">
             <div class="contact">
                 <div class="title">
                     <h2>my<span>contact</span></h2>
@@ -739,53 +739,6 @@
             <!-- contact -->
         </section>
         <!-- contact -->
-
-
-        
-
-
-
-
-        <!-- <section id="contact">
-            <div class="contact">
-                <div class="info">
-                    <h2>my- <br>
-                        information
-                    </h2>
-                    <ul>
-                        <li><a href="#"><span>name</span>송수지(song su ji)</a></li>
-                        <li><a href="#"><span>address</span>서울시 성북구 거주</a></li>
-                        <li><a href="#"><span>e-mail</span>songsuji@gmail.com</a></li>
-                        <li><a href="#"><span>github</span>https://github.com/sj5466/react.git</a></li>
-                    </ul>
-                </div>
-                <div class="e_mail">
-                    <h2>contact me</h2>
-                    <fieldset>
-                        <legend class="ir_su">send a message</legend>
-                        <div class="send">
-                            <div class="your">
-                                <div class="name">
-                                    <label for="username"></label>
-                                    <input type="text" name="user_name" id="user_name" required="required" placeholder="your name">
-                                </div>
-                                <div class="e-mail">
-                                    <label for="user_email"></label>
-                                    <input type="text" name="user_email" id="user_email" required="required" placeholder="your e-mail">
-                                </div>
-                            </div>
-                            <div class="message">
-                                <label for="user_message"></label>
-                                <input type="text" name="user_message" id="user_message" required="required" placeholder="message">
-                            </div>
-                            <a href="#" class="btn">send</a>
-                        </div>
-                    </fieldset>
-                </div>
-                
-            </div>
-        </section>
-        -//contact- -->
 
     </div>
     <!---//contents--->
@@ -911,7 +864,7 @@
         });
 
         //react 가로모드
-        function scroll(){
+        function scrollWidth(){
             const scrollTop = window.pageXOffset || document.documentElement.scrollTop || window.screenY;
             const reactLandscapeMode = document.querySelector('.react .container');
 
@@ -921,9 +874,9 @@
             if(scrollTop >= document.querySelector('#react').offsetTop){
                 gsap.to(reactLandscapeMode, {left: -offset ,ease:'linear'});
             }
-            requestAnimationFrame(scroll);
+            requestAnimationFrame(scrollWidth);
         }
-        scroll();
+        scrollWidth();
 
         // study 아코디언
         $(function(){
@@ -941,7 +894,68 @@
         // document.querySelector(".text_move").appendChild(textMove.cloneNode(true));
     
         
+        // 스크롤 시 일어나는 이벤트
+        window.addEventListener('scroll',function(){
+            let scrollTop = document.documentElement.scrollTop ||window.screenY || window.pageXOffset;
 
+            //메뉴(마지막 페이지에서 폰트 컬러 변화)
+            const headerMenu = document.querySelectorAll('#header a');
+            const scrollPage = document.querySelectorAll('.scroll');
+            const contactPage = document.querySelector('#contact');
+            const studyPage = document.querySelector('#study');
+            const thanksPage = document.querySelector('#thanks');
+        
+            
+
+            studyScroll();
+            // thanksScroll();
+            // contactScroll();
+
+            function studyScroll(){
+                if( scrollTop >= studyPage.offsetTop){
+                    headerMenu.forEach(menu =>{
+                        menu.style.color= '#fff';
+                    }); 
+                }else{
+                    headerMenu.forEach(menu =>{
+                        menu.style.color= '#000';
+                    });
+                }
+            }
+
+            
+            // function thanksScroll(){
+            //     if( scrollTop = thanksPage.offsetTop){
+                    
+            //         headerMenu.forEach(menu =>{
+            //             menu.style.color= '#000';
+            //         }); 
+            //     }else{
+            //         headerMenu.forEach(menu =>{
+            //             menu.style.color= '#fff';
+            //         });
+            //     }
+            // }
+            
+
+            // function contactScroll(){
+            //     if( scrollTop >= contactPage.offsetTop){
+
+            //         headerMenu.forEach(menu =>{
+            //             menu.style.color= '#fff';
+            //         }); 
+            //     }else{
+            //         headerMenu.forEach(menu =>{
+            //             menu.style.color= '#000';
+            //         });
+            //     }
+            // }
+
+            
+
+            
+            
+        });
 
     </script>
 </body>

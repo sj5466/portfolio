@@ -887,12 +887,6 @@
                 $(this).siblings().find('.desc').slideToggle().removeClass('active');
             });
         });
-
-        //text 움직임효과
-        // const textMove = document.querySelector(".contact .effect");
-        
-        // document.querySelector(".text_move").appendChild(textMove.cloneNode(true));
-    
         
         // 스크롤 시 일어나는 이벤트
         window.addEventListener('scroll',function(){
@@ -904,14 +898,23 @@
             const contactPage = document.querySelector('#contact');
             const studyPage = document.querySelector('#study');
             const thanksPage = document.querySelector('#thanks');
-        
+            const projectPage = document.querySelector('#project');
+            const projectTitle =document.querySelector('.project .title');
+
+            studyScrollMenu();
+            projectScrollText();
             
 
-            studyScroll();
-            // thanksScroll();
-            // contactScroll();
+           
+            function projectScrollText(){
+                if( scrollTop <= projectPage.offsetTop){
+                    projectTitle.classList.add('active');
+                }else{
+                    projectTitle.classList.remove('active');
+                }
+            }
 
-            function studyScroll(){
+            function studyScrollMenu(){
                 if( scrollTop >= studyPage.offsetTop){
                     headerMenu.forEach(menu =>{
                         menu.style.color= '#fff';
@@ -922,38 +925,6 @@
                     });
                 }
             }
-
-            
-            // function thanksScroll(){
-            //     if( scrollTop = thanksPage.offsetTop){
-                    
-            //         headerMenu.forEach(menu =>{
-            //             menu.style.color= '#000';
-            //         }); 
-            //     }else{
-            //         headerMenu.forEach(menu =>{
-            //             menu.style.color= '#fff';
-            //         });
-            //     }
-            // }
-            
-
-            // function contactScroll(){
-            //     if( scrollTop >= contactPage.offsetTop){
-
-            //         headerMenu.forEach(menu =>{
-            //             menu.style.color= '#fff';
-            //         }); 
-            //     }else{
-            //         headerMenu.forEach(menu =>{
-            //             menu.style.color= '#000';
-            //         });
-            //     }
-            // }
-
-            
-
-            
             
         });
 
